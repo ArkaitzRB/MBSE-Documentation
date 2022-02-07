@@ -1,12 +1,12 @@
-const jsonFile = "./data/summary.json";
+const jsonFileDefault = "./data/summary.json";
 
 document.addEventListener("DOMContentLoaded", () => {
-    let dataJson = readData(jsonFile);
+    let dataJson = readData(jsonFileDefault);
     console.log('PrevDrawing:', dataJson);
     drawCards(dataJson);
 })
 
-function readData(jsonFile) {
+async function readData (jsonFile) {
     //return JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
 
     var dataJson;
