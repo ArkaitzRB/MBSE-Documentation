@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function readData(jsonFile) {
     //return JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
 
-    const dataJson;
+    var dataJson;
     try {        
         dataJson = fetch(jsonFile).then(response => {
                             return response.json();
