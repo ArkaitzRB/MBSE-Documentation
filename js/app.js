@@ -67,4 +67,4 @@ function drawCard(element) {
     }
 }
 
-drawCards() 
+drawCards();
