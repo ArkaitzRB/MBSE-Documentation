@@ -2,7 +2,6 @@ const jsonFileDefault = "./data/summary.json";
 
 document.addEventListener("DOMContentLoaded", async() => {
     let dataJson = await readData(jsonFileDefault);
-    console.log('PrevDrawing:', dataJson);
     drawCards(dataJson);
 })
 
@@ -14,13 +13,11 @@ async function readData (jsonFile) {
         dataJson = await fetch(jsonFile).then(response => {
                                 return response.json();
                             }).then(data => {
-                                console.log('Inside fetch', data);
                                 return data;
                             }).catch(error => {
                                 console.error('Error:', error);
                                 return [];
                             });
-        console.log('After await', dataJson);
 
     } catch (error) {
         console.error('Error:', error)
@@ -31,21 +28,18 @@ async function readData (jsonFile) {
 } 
 
 function drawCards(data) {
-    console.log('Drawing Cards', data);
     if (Array.isArray(data)){
-        console.log('Array of Objects', data);
         data.forEach(element => drawCard(element));
     }
     else
     {
-        console.log('Single Object', data);
         drawCard(data);
     }
 }
 
 function drawCard(element) {
-    console.log('Card control', element)
     if (element !== undefined && element.title !== ""){
+        console.log('Card control ' + element.title, element)
         const template = document.getElementById("card").content;
         const clone = template.cloneNode(true);
     
