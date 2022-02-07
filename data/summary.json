@@ -2,13 +2,13 @@
     {
         "title": "Rhapsody",
         "descr": "Descripción de conceptos básicos en Rhapsody",
-        "url": "",
+        "url": "#",
         "image": "./img/rhapsody.png"
     },
     {
         "title": "Getting Started with Rhapsody",
         "descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...",
-        "url": "",
+        "url": "#",
         "image": "./img/sysML.png"
     },
     {
