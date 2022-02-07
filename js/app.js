@@ -9,12 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function readData(jsonFile) {
     try {
-        let data = fetch(jsonFile).then(response => {
+        let dataJson;
+        fetch(jsonFile).then(response => {
                             return response.json();
                         }).then(data => {
                             console.log(data);
-                            return data
-                            //this.dataJson = data
+                            dataJson = data
                         }).catch(err => {
                             console.error('Error:', error);
                             dataError = true;
