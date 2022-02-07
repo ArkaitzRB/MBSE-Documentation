@@ -1,44 +1,45 @@
 const jsonFile = "./data/summary.json";
+const dataJson = [];
 const dataError = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-    let data = readData(jsonFile)
+    readData(jsonFile)
     //data = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
-    drawCards(data);
+    if (dataError === false)
+        drawCards();
 })
 
 function readData(jsonFile) {
     try {
-        let dataJson;
         fetch(jsonFile).then(response => {
                             return response.json();
                         }).then(data => {
                             console.log(data);
-                            dataJson = data
-                        }).catch(err => {
+                            this.dataJson = data
+                        }).catch(error => {
                             console.error('Error:', error);
-                            dataError = true;
+                            this.dataError = true;
                         });
-
-        return data
 
     } catch (error) {
         console.log(error)
+        this.dataError = true;
     }
 } 
 
-function drawCards(data) {
-    if (Array.isArray(data)){
-        data.forEach(element => drawCard(element));
+function drawCards() {
+    if (Array.isArray(dataJson)){
+        dataJson.forEach(element => drawCard(element));
     }
     else
     {
-        drawCard(data);
+        drawCard(dataJson);
     }
 }
 
 function drawCard(element) {
-    if (element.title !== ""){
+    console.log(element)
+    if (element !== undefined && element.title !== ""){
         const template = document.getElementById("card").content;
         const clone = template.cloneNode(true);
     
