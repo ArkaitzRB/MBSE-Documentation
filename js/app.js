@@ -30,11 +30,14 @@ function readData(jsonFile) {
 } 
 
 function drawCards() {
+    console.log('Drawing Cards', dataJson);
     if (Array.isArray(dataJson)){
+        console.log('Array of Objects', dataJson);
         dataJson.forEach(element => drawCard(element));
     }
     else
     {
+        console.log('Single Object', dataJson);
         drawCard(dataJson);
     }
 }
