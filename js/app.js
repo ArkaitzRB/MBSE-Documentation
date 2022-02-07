@@ -1,50 +1,49 @@
 const jsonFile = "./data/summary.json";
-var dataJson = [];
-var dataError = false;
 
 document.addEventListener("DOMContentLoaded", () => {
-    readData(jsonFile)
-    //dataJson = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
-    console.log('DataError prevDrawing:', dataError);
-    // Revisar pq no funciona....
-    if (dataError === false)
-        drawCards();
-    console.log(dataJson);
+    let dataJson = readData(jsonFile);
+    //console.log('PrevDrawing:', dataJson);
+    drawCards(dataJson);
 })
 
 function readData(jsonFile) {
-    try {
+    //return JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
+
+    let dataJson;
+    try {        
         fetch(jsonFile).then(response => {
                             return response.json();
                         }).then(data => {
-                            console.log(data);
+                            //console.log(data);
                             dataJson = data
                         }).catch(error => {
                             console.error('Error:', error);
-                            dataError = true;
+                            dataJson = [];
                         });
 
     } catch (error) {
         console.log(error)
-        dataError = true;
+        dataJson = [];
     }
+
+    return dataJson
 } 
 
-function drawCards() {
-    console.log('Drawing Cards', dataJson);
-    if (Array.isArray(dataJson)){
-        console.log('Array of Objects', dataJson);
-        dataJson.forEach(element => drawCard(element));
+function drawCards(data) {
+    //console.log('Drawing Cards', data);
+    if (Array.isArray(data)){
+        //console.log('Array of Objects', data);
+        data.forEach(element => drawCard(element));
     }
     else
     {
-        console.log('Single Object', dataJson);
-        drawCard(dataJson);
+        //console.log('Single Object', data);
+        drawCard(data);
     }
 }
 
 function drawCard(element) {
-    console.log(element)
+    //console.log(element)
     if (element !== undefined && element.title !== ""){
         const template = document.getElementById("card").content;
         const clone = template.cloneNode(true);
@@ -66,5 +65,3 @@ function drawCard(element) {
         grid.appendChild(fragment);
     }
 }
-
-drawCards();
