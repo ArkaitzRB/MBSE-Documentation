@@ -1,14 +1,14 @@
 const jsonFile = "./data/summary.json";
-let dataJson = [];
-let dataError = false;
+var dataJson = [];
+var dataError = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     readData(jsonFile)
     //dataJson = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
     console.log('DataError prevDrawing:', dataError);
     if (dataError === false)
-        console.log('DataError inside IF:', dataError);
         drawCards();
+    console.log(dataJson);
 })
 
 function readData(jsonFile) {
