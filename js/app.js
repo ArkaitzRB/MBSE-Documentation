@@ -1,7 +1,7 @@
 const jsonFileDefault = "./data/summary.json";
 
-document.addEventListener("DOMContentLoaded", () => {
-    let dataJson = readData(jsonFileDefault);
+document.addEventListener("DOMContentLoaded", async() => {
+    let dataJson = await readData(jsonFileDefault);
     console.log('PrevDrawing:', dataJson);
     drawCards(dataJson);
 })
@@ -11,18 +11,15 @@ async function readData (jsonFile) {
 
     var dataJson;
     try {        
-        dataJson = fetch(jsonFile).then(response => {
-                            return response.json();
-                        }).then(data => {
-                            console.log('Inside fetch', data);
-                            return data;
-                        }).catch(error => {
-                            console.error('Error:', error);
-                            return [];
-                        });
-        console.log('After fetch', dataJson);
-        console.log('After fetch response', dataJson.response);
-        dataJson = await dataJson;
+        dataJson = await fetch(jsonFile).then(response => {
+                                return response.json();
+                            }).then(data => {
+                                console.log('Inside fetch', data);
+                                return data;
+                            }).catch(error => {
+                                console.error('Error:', error);
+                                return [];
+                            });
         console.log('After await', dataJson);
 
     } catch (error) {
