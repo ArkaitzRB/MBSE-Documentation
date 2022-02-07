@@ -65,3 +65,5 @@ function drawCard(element) {
         grid.appendChild(fragment);
     }
 }
+
+drawCards() 
