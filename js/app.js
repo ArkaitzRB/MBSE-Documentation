@@ -2,7 +2,7 @@ const jsonFile = "./data/summary.json";
 
 document.addEventListener("DOMContentLoaded", () => {
     let dataJson = readData(jsonFile);
-    //console.log('PrevDrawing:', dataJson);
+    console.log('PrevDrawing:', dataJson);
     drawCards(dataJson);
 })
 
@@ -11,18 +11,20 @@ function readData(jsonFile) {
 
     const dataJson;
     try {        
-        fetch(jsonFile).then(response => {
+        dataJson = fetch(jsonFile).then(response => {
                             return response.json();
                         }).then(data => {
-                            //console.log(data);
-                            dataJson = data
+                            console.log('Inside fetch', data);
+                            return data;
                         }).catch(error => {
                             console.error('Error:', error);
-                            dataJson = [];
+                            return [];
                         });
+        console.log('After fetch', dataJson);
+        dataJson = dataJson.response;
 
     } catch (error) {
-        console.log(error)
+        console.error('Error:', error)
         dataJson = [];
     }
 
@@ -30,20 +32,20 @@ function readData(jsonFile) {
 } 
 
 function drawCards(data) {
-    //console.log('Drawing Cards', data);
+    console.log('Drawing Cards', data);
     if (Array.isArray(data)){
-        //console.log('Array of Objects', data);
+        console.log('Array of Objects', data);
         data.forEach(element => drawCard(element));
     }
     else
     {
-        //console.log('Single Object', data);
+        console.log('Single Object', data);
         drawCard(data);
     }
 }
 
 function drawCard(element) {
-    //console.log(element)
+    console.log('Card control', element)
     if (element !== undefined && element.title !== ""){
         const template = document.getElementById("card").content;
         const clone = template.cloneNode(true);
@@ -53,6 +55,7 @@ function drawCard(element) {
         clone.querySelector(".title").textContent = element.title;
         clone.querySelector(".descr").textContent = element.descr;
         var button = clone.querySelector("button");
+        
         //Add event handler
         button.addEventListener ("click", function() {
             window.open(element.url, "_newtab" );
