@@ -21,7 +21,9 @@ function readData(jsonFile) {
                             return [];
                         });
         console.log('After fetch', dataJson);
+        console.log('After fetch response', dataJson.response);
         dataJson = dataJson.response;
+        console.log('After fetch data.response', dataJson);
 
     } catch (error) {
         console.error('Error:', error)
