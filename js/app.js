@@ -4,8 +4,8 @@ const dataError = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     readData(jsonFile)
-    //data = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
-    if (dataError === false)
+    //this.dataJson = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
+    if (this.dataError === false)
         drawCards();
 })
 
@@ -28,12 +28,12 @@ function readData(jsonFile) {
 } 
 
 function drawCards() {
-    if (Array.isArray(dataJson)){
-        dataJson.forEach(element => drawCard(element));
+    if (Array.isArray(this.dataJson)){
+        this.dataJson.forEach(element => drawCard(element));
     }
     else
     {
-        drawCard(dataJson);
+        drawCard(this.dataJson);
     }
 }
 
