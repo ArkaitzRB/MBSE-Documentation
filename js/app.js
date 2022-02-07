@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     readData(jsonFile)
     //dataJson = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
     console.log('DataError prevDrawing:', dataError);
+    // Revisar pq no funciona....
     if (dataError === false)
         drawCards();
     console.log(dataJson);
