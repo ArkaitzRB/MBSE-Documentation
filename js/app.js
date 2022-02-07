@@ -1,11 +1,11 @@
 const jsonFile = "./data/summary.json";
-const dataJson = [];
-const dataError = false;
+let dataJson = [];
+let dataError = false;
 
 document.addEventListener("DOMContentLoaded", () => {
     readData(jsonFile)
-    //this.dataJson = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
-    if (this.dataError === false)
+    //dataJson = JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "","image": "./img/sysML.png"},{"title": "","descr": "","url": "https://www.google.es","image": ""}]')
+    if (dataError === false)
         drawCards();
 })
 
@@ -15,25 +15,25 @@ function readData(jsonFile) {
                             return response.json();
                         }).then(data => {
                             console.log(data);
-                            this.dataJson = data
+                            dataJson = data
                         }).catch(error => {
                             console.error('Error:', error);
-                            this.dataError = true;
+                            dataError = true;
                         });
 
     } catch (error) {
         console.log(error)
-        this.dataError = true;
+        dataError = true;
     }
 } 
 
 function drawCards() {
-    if (Array.isArray(this.dataJson)){
-        this.dataJson.forEach(element => drawCard(element));
+    if (Array.isArray(dataJson)){
+        dataJson.forEach(element => drawCard(element));
     }
     else
     {
-        drawCard(this.dataJson);
+        drawCard(dataJson);
     }
 }
 
