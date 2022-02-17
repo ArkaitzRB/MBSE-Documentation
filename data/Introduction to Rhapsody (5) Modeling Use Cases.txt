@@ -39,9 +39,20 @@ Use Cases
 			* NOTE: Represent ROLES
 				+ if a Person/System plays 2 Roles, 2 Actors should be represented
 		- Traditionally shown as a Stick, most tools let change it by a Picture
-		- Naming:
+		- 14:33 - Identifying actors
+		- 15:25 - Naming
 		
-		... 14:33 ...
+	> 16:00 Relations
+		- Actor to Use Case
+			* Communication or Action
+			* No direction
+		- Actor to Actor
+			* Generalization or Inheritance
+		- Use Case to Use Case
+			* Generalization or Inheritance
+				- <<extends>> Additional behavior
+				- <<includes>> Common functionality
+		...  ...
 			
 			
 	
