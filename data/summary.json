@@ -3,18 +3,84 @@
         "title": "Rhapsody",
         "descr": "Descripción de conceptos básicos en Rhapsody",
         "url": "#",
-        "image": "./img/rhapsody.png"
+        "image": "./img/rhapsody.png",
+		"text": "./data/Rhapsody.txt"
     },
     {
-        "title": "Getting Started with Rhapsody",
-        "descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...",
-        "url": "#",
-        "image": "./img/sysML.png"
+        "title": "Introduction to SE Harmony Toolkit",
+        "descr": "Rhapsody Solution: SE Harmony Toolkit presentation",
+        "url": "https://www.youtube.com/watch?v=axX6wwY3puQ",
+        "image": "./img/.png",
+		"text": "./data/Introduction to SE Harmony Toolkit.txt"
+    },
+    {
+        "title": "Getting Started SysML Rhapsody",
+        "descr": "Rhapsody Solution: SysML project flow, Use Case, Requirements, Validation (functional Analysis) - Activities, ...",
+        "url": "https://www.youtube.com/watch?v=j2pglKC5f7U",
+        "image": "./img/sysML.png",
+		"text": "./data/Getting Started SysML Rhapsody.txt"
+    },
+    {
+        "title": "To Explore...",
+        "descr": "Following steps (Rhapsody, SysML, ...",
+        "url": "https://www.google.es",
+        "image": "./img/undraw.png",
+		"text": "./data/.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (1)",
+        "descr": "Why Model",
+        "url": "https://www.youtube.com/watch?v=9gpbq0UooOM",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (1) Why Model.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (3)",
+        "descr": "SysML Diagrams Overview",
+        "url": "https://www.youtube.com/watch?v=3z71Dpkl7MQ&t=1077s",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (3) SysML Diagram Overview.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (4)",
+        "descr": "Modeling Requirements",
+        "url": "https://www.youtube.com/watch?v=JUB18itNMG0",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (4) Modeling Requirements.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (5)",
+        "descr": "Modeling Use Cases",
+        "url": "https://www.youtube.com/watch?v=vQjFJ6Gmgb4",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (5) Modeling Use Cases.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (6)",
+        "descr": "XXX",
+        "url": "youtube",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (6) XXX.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (7)",
+        "descr": "XXX",
+        "url": "youtube",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (7) XXX.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (8)",
+        "descr": "XXX",
+        "url": "youtube",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (8) XXX.txt"
     },
     {
         "title": "",
         "descr": "",
-        "url": "https://www.google.es",
-        "image": ""
+        "url": "#",
+        "image": "./img/.png",
+		"text": "./data/.txt"
     }
 ]

@@ -1,0 +1,48 @@
+
+TUTORIAL - 321Gang
+
+Modeling Use Cases (Module 5) - Introduction to Rhapsody for Software & Systems Engineers
+https://www.youtube.com/watch?v=vQjFJ6Gmgb4
+
+Use Cases
+	> 0:40 Requirement
+	
+	> 2:55 Use Case Diagram
+		- A Use Case is really like a Requirement of the System
+		- Composed by:
+			* Use Case: Feature, Function of the System
+			* Frame: System Boundary. Group elements of the system. 
+			* Actor: people, systems, components that interacts with the System (and are outside the System)
+		- Shows WHAT the System is going to do
+		
+	> 4:46 Use Case
+		- IS a Requirement: specify WHAT the System is going to do to meet the other Requirements
+		- Satisfies one or more Requirements
+			* Shows the implementation of these Requirements
+		- Refined in (added detail):
+			* State Charts
+			* Activity Diagrams
+			* Sequence Diagrams
+		
+	> 6:31 Why use Use Cases
+		- Show Capabilities
+		- Show Scope
+		- Help Understand better the System functionality
+		- Help Validate the System
+		
+	> 8:50 Define Usage of the System
+	
+	> 12:03 Actors
+		- Represents elements outside the System
+		- Won't be modeled
+		- Represent People, others Systems, Components
+			* NOTE: Represent ROLES
+				+ if a Person/System plays 2 Roles, 2 Actors should be represented
+		- Traditionally shown as a Stick, most tools let change it by a Picture
+		- Naming:
+		
+		... 14:33 ...
+			
+			
+	
+	

@@ -1,0 +1,77 @@
+
+TUTORIAL - 321Gang
+
+SysML Diagram Overview (Module 3) - Introduction to Rhapsody for Software & Systems Engineers
+https://www.youtube.com/watch?v=3z71Dpkl7MQ
+
+	> Diagram Hierarchy
+		- 3 types of Diagrams:
+			* Requirement Diagrams
+				+ What is the System going to do?
+			* Structural Diagrams
+				+ What are the Parts of the System
+				+ How those Parts interact (Relationship, Interface, ...)
+			* Behavioral Diagrams
+				+ Given the Interactions, What are those Parts suppose to do
+				+ What each Feature mean to be
+			
+	1) Requirement Diagrams
+		- Requirement Diagram
+			* Allow to Keep Requirement into Scope
+			* Allow to visualize graphically Requirements grouped by SubSystem
+			*** In other videos, it is recommended
+				+ Requirement Management Tool (Requirement Table): to list Requirements, instead of Diagram
+				+ Relation Matrix: to relation Requirements with Use Cases
+				
+	2) Behavioral Diagrams
+		- Use Case Diagram
+			* Defines What the System is supposed to do. NOT How
+			* Actors: people, other hardware/softwares
+			* Boundary box: our System
+				(EMS, Power Plant: could be 2 boundary Box, if we are to represent each of them as SubSystem of our System)
+		- Activity Diagram
+			* Arrows represent event emitted (out) and accepted (in)
+			* Square: Actions -> ideallt takes no time, and can´t be interrupted
+				(could be data, and events IN)
+			* "Rombos": Decision point
+			*** Every Path represent a sequence
+			
+		- Sequence Diagram
+			* Capture the different Paths (sequences) of the Activity Diagram
+			* Show calls done from a Part of the System to the next (arrows in Activity Diagram)
+			* Time goes down from the Top to the Bottom of the Diagram
+		
+		- State Machine Diagram (StateChart)
+			* Represent different States of the System (squares), linked by Events (arrows) which change System's state
+		
+	3) Structural Diagrams
+		- Package Diagram
+			* Shows a way to arrange the work
+			* Show Dependencies between Packages (helps to find potencial conflicts - specially in circular dependencies)
+		
+		- Block Definition Diagram
+			* Show the Structure of the System (of the larger pieces of the System)
+			* Show relationships, and the physical Blocks itself 
+			* Blocks: 
+				+ have Behavior
+				+ can be associated with Data -> Atributes
+				+ operations that they can perform
+			
+		- Internal Block Diagram
+			* Show the Decomposition of the Blocks into its Parts
+				+ Parts are Blocks
+			* Show the Interfaces between its Block, and also with outside Blocks 
+		
+		- Parametric Diagram (SEGUIR CON 19:30)
+			* Special
+			* Model dynamics of the physical "world"
+			* Can be Integrated into other programs, such as SIMULINK
+			* Or can be executed on their own (inside the program)
+			* Use Attributes and Constrains (ecuations)
+		
+	> Diagram Frame
+		- All the Diagrams have a Frame
+			* Define the Object where the elements are
+			* Define the Boundary
+	
+		

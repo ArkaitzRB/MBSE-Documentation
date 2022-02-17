@@ -1,0 +1,181 @@
+
+SOLUTIONS
+	> Introduction to the Rational Rhapsody Harmony Toolkit for Systems Engineers
+		- https://www.youtube.com/watch?v=axX6wwY3puQ
+		
+		- 04:48 - SE Harmony Toolkit: automate building Systems Engineering
+			* Speeds up SE models generation
+			* Ensures consistency
+			* Automate tasks
+			
+		- 07:35 - System Engineering Project Structure
+		
+		- 08:05 - Example: Start SysML Project
+		
+		- 08:34 - Add HarmonySE profile
+			* Enable Systems Engineering Toolkit
+			* "File/Add Profile to Model..." and select "HarmonySE/HarmonySE.sbs"
+			
+		- 09:15 - Create Harmony Project
+			* Create a set of Folders and Diagrams - Useful to organize projects (standarized)
+			* Select Project root and "SE-Toolkit/Create Harmony Project"
+			* 09:30 - NOTE: Custom project Structure could be created export/import-ing by XML 
+				+ After it is created the desired structure "SE-Toolkit/Export Project Structure to XML"
+				+ In the next projects, create the structure by "SE-Toolkit/Create New Project Structure from XML"
+			* 09:50 - Default Structure:
+				+ Actor
+				+ Design Synthesis
+					o Architectures
+				+ Functional Analysis
+				+ Interfaces
+				+ Requirements Analysis
+					o Requirements
+					o Use Cases 
+						¡! INITIAL Use Case Diagram CREATED
+				+ Types
+				
+		- 10:52 - Import Requirements from DOORS
+		
+		- 13:56 - Use Case Diagram creation
+			* Use Cases
+			* Actors
+			* Associations
+			
+		- 15:20 - Add Traceability between Requirements and Use Cases
+			* 15:40 Create a Requirements Table
+				+ Select RequirementPkg and "Add New/Requirements/RequirementsTable"
+			* 16:00 Create a Traceability Matrix
+				+ Select RequirementPkg and "Add New/View and Layouts/Matrix View"
+					o Layout: Use Case Trace Matrix (preinstalled template)
+					o FROM and TO: Entire Project to see all Requirements and Use Cases relation
+					o Here Dependencies can also be created
+					o NOTE: Great View to check if all Requirements are covered by Use Cases
+					o NOTE: It is also possible to check if there is any Use Case without Requirements (NOT needed)
+						# There is a not Required Use Case
+						# There are missing requirements
+			* 16:35 Due to encapsulation of DOORS requirements... easier to use Modeling Toolbox
+				+ Open Modeling Toolbox "Tools/SE-Toolkit/Modeling Toolbox"
+				+ Insert Dependencies between Use Cases and Requirements
+					o Allow to select:
+						# Use Cases from Use Case Diagrams
+						# Requirements from Requirements Table
+						
+		- 19:22 - Functional Analysis
+			* 19:24 Possible flow model creations
+			* 20:28 Selected flow model creation - for the example
+				+ Define Model Context (Automated) - UC Internal Block Diagram
+				+ Define UC Functional Flow (Manual) - UC Block Box Activity Diagrams
+				+ Derive UC Scenarios from Functional Flow (Automated) - UC Block Box Sequence Diagrams
+				+ Define Ports and Interfaces (Automated)
+				+ Derive UC State-Based Behavior from UC BB-Activity BB-Sequences (Partially-Automated) - UC State Machine
+				+ Verify / Validate Use Case Through Model Execution (Manual)
+				+ Extend UC Model wrt Errors /Failures (Manual)
+				+ Link Block Properties to System Requirements (Manual)
+			
+			* 21:24 Define Model Context (Automated) - UC Internal Block Diagram
+				+ Using Automation in Harmony-SE toolkit to generate Models, select Use Case and "SE-Toolkit/Create System Model From Use Case"
+					+ New Package is created inside "Functional Analysis Package" with the name of the Use Case
+					+ It is created its Model (SysML Block)
+					+ It is created a Scenario Analysis Package
+					+ It is created an Execution Scope Package
+						o Composed by Parts of the Use Case, and of any Actors related to it
+					+ It is moved the Use Case, inside which it is created an Activity View:
+						o Activity View: Allow to model the functional flow
+					+ It is created its Internal Block Diagram
+						o Here are represented all the Parts (Execution Scope Package)
+					
+			* 23:42 Define UC Functional Flow (Manual) - UC Block Box Activity Diagrams
+				+ Activity View: 
+					o Identifes all system functions and the major functional flows
+					o All possible flows are shown later un the State Machine (For exmaple interrupt driven flows)
+				+ Different Elemets
+					o Actor Pins: link to Actor action
+					o Message Action: specify that something occur
+						# Can be used to name Events for Actor Pins			
+				+ 26:05 Designing an Example
+					o In order to Open Activity Diagram, Select desired Use Case, and "Hyperlink/Black Box Activity View"
+					o Create Actions
+					o Create Desitions
+					o 27:10 Create Event
+						# Add an Entry Action
+						# Add an Actor Pin to it (Select Action, and "SE-Toolkit/Add Actor Pins")
+						# Change to Message Action (Select Action, and "Change to/Message Action", in order to have the Event (otherwise, it would be a Function coming in)
+					o Insert Starting point, and Relations betweens Actions
+				+ 29:15 Rename default block/activity/... names by "SE-Toolkit/Auto-Rename Actions"
+					
+			* 30:03 Derive UC Scenarios from Functional Flow (Automated) - UC Block Box Sequence Diagrams
+				+ 30:30 SE-Toolkit Automation explanations
+				+ 32:20 Using Automation in Harmony-SE toolkit to generate Sequence Diagram, Select Canvas in an Activity Diagram and "SE-Toolkit/Generate Sequence Diagrams"
+				
+				+ 34:57 Consistency Checking of the Activity Diagram
+					o Toolkit compares the Activity Diagram to all the Sequence Diagrams which describes it
+					o Select Canvas in the Activity Diagram and "SE-Toolkit/Perform Activity View Consistency Check"
+			
+			* 36:34 Define Ports and Interfaces (Automated)
+				+ 40:35 Auto-generation of Ports and Interfaces from a Sequence Diagram
+					o Select Canvas in the Sequence Diagram and "SE-Toolkit/Create Ports and Interfaces"
+					o Internal-Block Diagram is generated or completed
+				+ 42:22 Connect Ports
+					o Select Canvas in Internal-Block Diagram and "SE-Toolkit/Connect Ports"
+					
+			* 42:57 Derive UC State-Based Behavior from UC BB-Activity BB-Sequences (Partially-Automated) - UC State Machine
+				+ Two type of State-Machine
+					o 43:05 Actor State-Machine (automated creation)
+						# Simple State-Machine, based on Ports/Interfaces
+						# The Actor responds to an Event by sending an Event
+						# In order to create them, Select an Actor in the Internal-Block Diagram and "SE-Toolkit/Create Text Bench"
+
+					o 46:23 System State-Machine (mixed creation)
+						# Real behaviour of the block
+						# Type of States:
+							- Wait States (when the Part is waiting to an event)
+							- Send Actions (represent an Event sent through a Port)
+							- Action States (system functions/actions/...)
+						# 49:10 In order to generate it, Select the Package of Sequence Diagrams folder in the tree, and "SE-Toolkit/Generate Initial StateChart(s)"
+							- Wait States and Send Actions are created
+							- Then, all the connection and rest of Action States should by created by hand
+
+			* 50:30 Verify / Validate Use Case Through Model Execution (Manual)
+				+ Validation of Use Case thanks to defined Sequence Diagrams
+				+ Select the Use Case in the tree, and "SE-Toolkit/Setup Model Execution"
+					o A Component is created, so we can execute the Model
+						# It is possible to Execute each Use Case in isolation
+					o Inside it, a configuration file (named "Animate") is created
+				+ To start the verification, click "Run executable" in Tool-Bar
+					o It is possible the open an animated State-Machine Diagram by "Tools/Animated StateChart". Actual State is highlighted
+				+ To interactuate with the Flow:
+					o Open a Browser and insert "localhost" direction
+					o Folder tree should appear with the different Parts of the Model
+					o Navigating to the Model, it is possible to setup the configuration to Verify
+					o Navigating to the Actor to which the Model is waiting, it is possible to simulate its Send Action
+					o In this way, it is possible to Check if the Model behaviour is as expected
+					
+		- 53:40 Design Synthesis
+			* Could be done Use Case by Use Case
+			* Two stages
+				+ 54:25 Architectural Analysis
+					o Analysis of the Optimal Architecture
+					o Functional analysis defines WHAT the system should do, although Architectural Analysis identifies HOW it should be done
+				+ 54:48 Architectural Design
+					o Contruction and Validation of the Architecture
+					
+			* 55:40 Example - Architectural Design
+				+ Create a Block Definition Diagram
+					o Select Design Synthesis Package and "Add New/Diagrams/Block Definition Diagram"
+				+ Link previous Functional Analysis to its Block
+					o Select the Block and "SE-Toolkit/Merge Functional Analysis"
+				+ Separate info in hierarchical folders, moving SubSystems to SubPackages
+					o Select the Block and "SE-Toolkit/Create Sub Packages"
+				+ 58:19 In this way Subsistem Activity View will be also splited according to each Subsystem - Allocate Operations
+					o It will be done inserting different frames for each SubSystem
+					o Then drag each Subsystem block to corresponding Frame
+					o Finally, in orther to link graficed distribution:
+						# (Check) Select canvas "SE-Toolkit/Perform Swimlane Consistency Check"
+						# (Link) Select Frame and "SE-Toolkit/Allocate operations from Swimlane"
+				+ 1:03:14 Allocate Attributes and Events in each Subsystem
+					o Enter in the Block Definition Diagram, Select System Block, and "SE-Toolkit/Allocation Wizard"
+				
+		- 1:05:27 Detailed Design
+			* Same steps as Architectural level, but for Sequence Diagrams and Behavioral Views
+				+ Select Block Definition Diagram and "SE-Toolkit/Generate Sequence Diagrams"
+					o As in Architectural Design, when a Decision appears it should be selected the path to conform the actual Scenario

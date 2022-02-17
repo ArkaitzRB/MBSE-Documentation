@@ -53,11 +53,46 @@ function drawCard(element) {
         button.addEventListener ("click", function() {
             window.open(element.url, "_newtab" );
             //window.open (element.url, "_blank" );
+            
+            // Remove Detail Document
+            drawPage(element.title, element.text, element.url)
+            
+            // Hide Summary Grid
+            const grid = document.getElementById("grid");
+            grid.hidden = true;
         });
     
         const fragment = document.createDocumentFragment();
         fragment.appendChild(clone);
         const grid = document.getElementById("grid");
         grid.appendChild(fragment);
+    }
+}
+
+function drawPage(title, text, url) {
+    if (text !== undefined && text !== ""){
+        console.log('Document control ' + element.title, element)
+        const template = document.getElementById("document").content;
+        const clone = template.cloneNode(true);
+    
+        clone.querySelector(".title").textContent = title;
+        clone.querySelector(".text").textContent = text;
+        var close = clone.querySelector("close");
+        
+        //Add event handler
+        close.addEventListener ("click", function() {
+            // Remove Detail Document
+            const doc = document.getElementById("doc");
+            doc.childNodes.forEach(c => doc.removeChild());
+            
+            // Show Summary Grid
+            const grid = document.getElementById("grid");
+            grid.hidden = false;
+        });
+
+        const fragment = document.createDocumentFragment();
+        fragment.appendChild(clone);
+        const doc = document.getElementById("doc");
+        doc.appendChild(fragment);
     }
 }

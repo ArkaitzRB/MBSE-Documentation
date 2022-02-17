@@ -1,0 +1,89 @@
+/***********************************************************************
+ *  Different bullet type
+ **********************************************************************/
+.bullets1 { list-style: none; /* Remove default bullets */ }
+.bullets1 li::before {
+    content: "\003E";  /* Add content: CSS Code/unicode for a Greater than*/
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.bullets2 { list-style-type: disc; }
+
+.bullets3 { list-style: none; /* Remove default bullets */ }
+.bullets3 li::before {
+    content: "\2212";  /* Add content: CSS Code/unicode for a minus (\2212 or \2010)*/
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.bullets2 { list-style-type: square; }
+
+.bullets3 {	list-style-type: circle; }
+
+.bullets4 { list-style: none; /* Remove default bullets */ }
+.bullets4 li::before {
+    content: "\2719";  /* Add content: CSS Code/unicode for a plus*/
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.bullets5 { list-style: none; /* Remove default bullets */ }
+.bullets5 li::before {
+    content: "\2794";  /* Add content: CSS Code/unicode for a arrow*/
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.bulletsNote { list-style: none; /* Remove default bullets */ }
+.bulletsNote li::before {
+    content: "\002A";  /* Add content: CSS Code/unicode for a asterisk*/
+    color: blue; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.bulletsPro { list-style: none; /* Remove default bullets */ }
+.bulletsPro li::before {
+    content: "\2713";  /* Add content: CSS Code/unicode for a Check*/
+    color: green; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+.bulletsCon { list-style: none; /* Remove default bullets */ }
+.bulletsCon li::before {
+    content: "\2717";  /* Add content: CSS Code/unicode for a Cross*/
+    color: red; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+
+
+/***********************************************************************
+ *  CHANGING Bullet Icon and Color
+ **********************************************************************/
+.bulletsX { list-style: none; /* Remove default bullets */ }
+.bulletsX li::before {
+    content: "\2022";  /* Add content: CSS Code/unicode for a bullet: • = "\2022", ◦ = \25E6" and ▪ = "\25AA"*/
+    color: red; /* Change the color */
+    font-weight: bold; /* If you want it to be bold */
+    display: inline-block; /* Needed to add space between the bullet and the text */
+    width: 1em; /* Also needed for space (tweak if needed) */
+    margin-left: -1em; /* Also needed for space (tweak if needed) */
+}

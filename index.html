@@ -5,6 +5,7 @@
     <link rel="icon" type="image/x-icon" href="./img/icon_en.png">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/color.css">
+    <link rel="stylesheet" type="text/css" href="./css/icon.css">
   </head>
   <body>
     <header>
@@ -17,7 +18,7 @@
       </div>
     </header>
     
-    <section>
+    <section id="summary">
       <div id="grid" class="grid-wrapper zone blueSener">
         <!--
         <button class="box zone" href="https://www.w3schools.com/">
@@ -35,6 +36,42 @@
           <p class="descr">Explanation</p>
         </button>
       </template>
+    </section>
+    
+    <section id="page">
+      <div class="doc zone blueSkySener">
+        <ul class="bullets bullets1">
+          <li>Coffee</li>
+          <li>Tea</li>
+          <li>Milk</li>
+          <!--<li></li>-->
+        </ul>
+        <hr>
+      </div>
+      
+      <template id="document">
+        <div class="doc zone blueSkySener">
+          <div class="header">
+            <p class="title">Title</p>
+            <i class="close i-cross">
+          </div>
+          <a class="link" href="#">(Link)</a>
+          <p class="text">Text</p>
+          <ul class="bullets">
+            <!--<li></li>-->
+          </ul>
+          <hr>
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/9gpbq0UooOM" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+          </iframe>
+        </div>
+        </template>
     </section>
 
     <footer class="zone greySener">Sener</footer>

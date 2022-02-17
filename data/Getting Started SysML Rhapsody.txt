@@ -1,0 +1,72 @@
+
+SOLUTIONS
+	> Getting Started with Rhapsody for Systems Engineering
+		- https://www.youtube.com/watch?v=j2pglKC5f7U
+		
+		- 12:00 - Start SysML Project Tutorial
+			* New Project:
+				+ Project type: SysML
+			* If not selected SysML, SysML profile should be added 
+				+ later could be selected:
+					o "File/Add Profile to Model..." and select "SysML/SysMLProfile_rpy/SysML.sbs"
+				+ To completely make SysML project:
+					o In the Project root select "Change to/SysML"
+			* Add HarmonySE profile
+				+ Enable Systems Engineering Toolkit
+				+ "File/Add Profile to Model..." and select "HarmonySE/HarmonySE.sbs"
+			* Create Harmony Project
+				+ Create a set of Folders and Diagrams - Useful to organize projects (standarized)
+				+ Select Project root and "SE-Toolkit/Create Harmony Project"
+				+ NOTE: Custom project Structure could be created export/import-ing by XML 
+					o After it is created the desired structure "SE-Toolkit/Export Project Structure to XML"
+					o In the next projects, create the structure by "SE-Toolkit/Create New Project Structure from XML" (9.30)
+			* Add artifact from another Model
+				+ Allow us to load Packages (ex: Models, Requirements, ... of  a Library)
+				+ "File/Add to Model"
+					o "As unit": the element is imported (enable editing)
+					o "As Reference": not importing, read-only element, constantly linked to the original file
+		- 25:00 - Use Case Diagram characteristics
+			* 32:00 Use Cases
+			* 34:34 Boundary Boxes
+			* 37:50 Actors
+			* 38:00 Associations
+			* 38:45 Diagram Explanation
+				+ All REQUIREMENTS should be covered by at least one USE CASE
+		- 39:15 - Add dependencies FROM (or TO) the selected Use Case
+			* 39:15 Using Automation in Harmony-SE toolkit, select Use Case and "SE-Toolkit/Add Dependencies/From Selected"
+				+ Select desired Target(s) - in this case a bunch of Requirements
+				+ Select Profile and Stereotype of the Dependency
+			* 42:45 Create a Traceability Matrix
+				+ Select RequirementPkg and "Add New/View and Layouts/Matrix View"
+					o Layout: Use Case Trace Matrix (preinstalled template)
+					o FROM and TO: Entire Project to see all Requirements and Use Cases relation
+					o Here Dependencies can also be created
+					o NOTE: Great View to check if all Requirements are covered by Use Cases
+					o NOTE: It is also possible to check if there is any Use Case without Requirements (NOT needed)
+						# There is a not Required Use Case
+						# There are missing requirements
+		- 44:30 - Next... Take Use Cases as starting point in modeling
+			* Make an executable model for each Use Case, in order to Verify and Validate the Requirements
+			* Building a Model 
+				+ Create separate Package -> "Functional Analysis Package"
+				+ Create a bunch of other elements
+				+ For this...
+			* 46:00 Using Automation in Harmony-SE toolkit to generate Models, select Use Case and "SE-Toolkit/Create System Model From Use Case"
+				+ 48:56 New Package is created inside "Functional Analysis Package" with the name of the Use Case
+				+ 49:36 It is moved the Use Case, inside which it is created an Activity View:
+					o Activity View: Allow to model the functional flow
+				+ 49:55 It is created its Model (SysML Block)
+				+ 50:48 It is created an Execution Scope Package
+					o Composed by Parts of the Use Case, and of any Actors related to it
+				+ 51:10 It is created a Scenario Analysis Package
+				+ 51:20 It is created its Internal Block Diagram
+					o Here are represented all the Parts (Execution Scope Package)
+			
+		- NOTES:
+			* 47:08 Different filters applicable to Browser tree
+				+ By Default "Entire Model View"
+				+ Filters of type of Elements
+			* 48:10 Create new tree, with selected folder as Root (each tree has its filter)
+				+ Select desired folder and "Navigate/Browser from Here"
+			* 52:57 It is created Model Level Hyperlinks to Navigate across the Model
+				+ Select any element, and "Hyperlink/[Views where it is]"

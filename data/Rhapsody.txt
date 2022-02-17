@@ -1,0 +1,15 @@
+
+IBM Rational Rhapsody
+
+	> Wellcome page: 
+		- DOCUMENTATION
+		- SOLUTIONS: Interesting examples with Video and Guide (list of Tasks)
+	
+	> SE Harmony Toolkit: automate building Systems Engineering
+		- Speeds up SE models generation
+		- Ensures consistency
+		- Automate tasks
+			* ...
+				+ ...
+					o ...
+

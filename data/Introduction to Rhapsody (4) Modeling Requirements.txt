@@ -1,0 +1,56 @@
+
+TUTORIAL - 321Gang
+
+Modeling Requirements (Module 4) - Introduction to Rhapsody for Software & Systems Engineers
+https://www.youtube.com/watch?v=JUB18itNMG0
+
+Requirements
+	> 1:06 What is
+		- ID
+		- Descriptive Text
+		- Links/traces
+			* To other elements
+		- Constrains
+			* Range
+			* Applicable options
+		- Attributes
+			* Tags - Ex: Type of Model they affect
+		- History
+		
+	> 5:50 To check if is CORRECTLY defined: 5 Cs
+		- Complete: all characteristics defined
+		- Correct
+		- Consistent: itself and with other Requirements
+		- Confirmable: Testable
+		- Necessary: a Requirement is something that has to be achieved, not a recommendation
+		
+	> SysML 
+		- 8:40 Requirement Diagram
+			* Requirements are defined by:
+				+ Frame (like a Box representation)
+				+ Name
+				+ Identification ID
+				+ Description
+
+		- 10:15 Types
+			* Requirement types:
+				+ Requirement
+				+ Constrain
+				+ Note: remainder, explanation, recommendation, ...
+			* Dependiency (linker) types:
+				+ trace (see 13:25): generic link
+				+ derived From (see 12:55): addition of Requirements to one Requirement. It goes from the new Requirements to the Base
+				+ satisfy (see 13:52): generally goes from an Artifact (not Requirement, such as Use Case, Block, ...) to a Requirement
+				+ verify: goes from Test Cases to a Requirement
+				+ refine: special case - give more info to the Requirement
+				+ copy (not recommended)
+				
+		- Traceability Matrix (13:25):
+			* Very useful to see Requirements' dependencies
+
+		- 14:04 Traceability importance
+		
+		- 15:58 Others...
+			* Use Cases: group Requirements together
+			* Activity Diagram & State Chart Diagram: allow to specify flows' Requirements
+			* Parametric Diagram
