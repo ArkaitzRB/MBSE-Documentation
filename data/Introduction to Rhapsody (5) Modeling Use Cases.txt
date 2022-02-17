@@ -49,11 +49,8 @@ Use Cases
 		- Actor to Actor
 			* Generalization or Inheritance
 		- Use Case to Use Case
+			* <<extends>> Additional behavior
+			* <<includes>> Common functionality
+				+ Same of <<extends>>, but in the Opposite direction
 			* Generalization or Inheritance
-				- <<extends>> Additional behavior
-				- <<includes>> Common functionality
-		...  ...
-			
-			
-	
 	

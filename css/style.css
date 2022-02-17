@@ -136,6 +136,40 @@ label.cover {
     font-size: 1.2rem;
 }
 
+.close{
+    align-items:initial;
+	color:#fff;
+	background-color:#007bff;
+	border-color:#007bff
+}
+.close:hover{
+	color:#fff;
+	background-color:#0069d9;
+	border-color:#0062cc
+}
+.close.focus,
+.close:focus{
+	box-shadow:0 0 0 .2rem rgba(0,123,255,.5)
+}
+.close.disabled,
+.close:disabled{
+	color:#fff;
+	background-color:#007bff;
+	border-color:#007bff
+}
+.close:not(:disabled):not(.disabled).active,
+.close:not(:disabled):not(.disabled):active,.show>
+.close.dropdown-toggle{
+	color:#fff;
+	background-color:#0062cc;
+	border-color:#005cbf
+}
+.close:not(:disabled):not(.disabled).active:focus,
+.close:not(:disabled):not(.disabled):active:focus,.show>
+.close.dropdown-toggle:focus{
+	box-shadow:0 0 0 .2rem rgba(0,123,255,.5)
+}
+
 /***********************************************************************
  *  Footer
  **********************************************************************/

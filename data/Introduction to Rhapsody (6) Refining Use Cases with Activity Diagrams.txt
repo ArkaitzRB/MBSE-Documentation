@@ -1,0 +1,9 @@
+
+TUTORIAL - 321Gang
+
+Refining Use Cases with Activity Diagrams (Module 6) - Introduction to Rhapsody for Software & Systems Engineers
+https://www.youtube.com/watch?v=TnJHu7IqKI4
+
+Activity Diagrams
+	> 0:53 Use Cases
+		- 

@@ -10,7 +10,7 @@
         "title": "Introduction to SE Harmony Toolkit",
         "descr": "Rhapsody Solution: SE Harmony Toolkit presentation",
         "url": "https://www.youtube.com/watch?v=axX6wwY3puQ",
-        "image": "./img/.png",
+        "image": "./img/sysML.png",
 		"text": "./data/Introduction to SE Harmony Toolkit.txt"
     },
     {
@@ -57,10 +57,10 @@
     },
     {
         "title": "Introduction to Rhapsody (6)",
-        "descr": "XXX",
-        "url": "youtube",
+        "descr": "Refining Use Cases with Activity Diagrams",
+        "url": "https://www.youtube.com/watch?v=TnJHu7IqKI4",
         "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (6) XXX.txt"
+		"text": "./data/Introduction to Rhapsody (6) Refining Use Cases with Activity Diagrams.txt"
     },
     {
         "title": "Introduction to Rhapsody (7)",
