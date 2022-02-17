@@ -71,7 +71,7 @@ function drawCard(element) {
 
 function drawPage(title, text, url) {
     if (text !== undefined && text !== ""){
-        console.log('Document control ' + element.title, element)
+        console.log('Document control ' + title, text)
         const template = document.getElementById("document").content;
         const clone = template.cloneNode(true);
     
