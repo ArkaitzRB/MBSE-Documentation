@@ -4,6 +4,10 @@ const jsonFileDefault = "./data/summary.json";
 document.addEventListener("DOMContentLoaded", async() => {
     let dataJson = await readData(jsonFileDefault);
     drawCards(dataJson);
+
+    //Hide Detail Document
+    const doc = document.getElementById("page");
+    doc.style.display = "none";
 })
 
 async function readData (jsonFile) {
@@ -32,11 +36,30 @@ async function readData (jsonFile) {
 function drawCards(data) {
     if (Array.isArray(data)){
         data.forEach(element => drawCard(element));
-    }
-    else
-    {
+    } else {
         drawCard(data);
     }
+}
+
+function filterIfEnter(event){
+    console.log(event.key);
+    if (event.key === "Enter") {
+        // Do work
+    };
+}
+
+function filterCards() {
+    const filterText = document.getElementById("search").value;
+
+    const grid = document.getElementById("grid");
+    for (let i = 0; i < grid.children.length; i++) {
+        const child = grid.children[i];
+        if (child.querySelector(".title").textContent.includes(filterText) || child.querySelector(".descr").textContent.includes(filterText)){
+            child.style.display = "block";
+        } else {
+            child.style.display = "none";
+        }
+      }
 }
 
 function drawCard(element) {
@@ -46,26 +69,24 @@ function drawCard(element) {
         const clone = template.cloneNode(true);
     
         clone.querySelector(".image").setAttribute("src", element.image);
-        //clone.querySelector(".title").innerHTML = `${element.title} <span>${pokemon.descr}hp</span>`;
         clone.querySelector(".title").textContent = element.title;
         clone.querySelector(".descr").textContent = element.descr;
 
         var button = clone.querySelector("button");
-        //Add event handler
         button.addEventListener ("click", function() {
             // Open an URL in a New Tab
             //window.open(element.url, "_newtab" );
             //window.open (element.url, "_blank" );
             
-            // Remove Detail Document (if exist)
+            // Remove previous Detail Documents (if exist)
             erasePage()
             
             // Add Detail Document
             drawPage(element.title, element.text, element.url)
             
             // Hide Summary Grid
-            const grid = document.getElementById("grid");
-            grid.hidden = true;
+            // const grid = document.getElementById("grid");
+            // grid.style.display = "none";
         });
     
         const fragment = document.createDocumentFragment();
@@ -82,11 +103,9 @@ async function drawPage(title, text, url) {
         const clone = template.cloneNode(true);
     
         clone.querySelector(".title").textContent = title;
-        clone.querySelector(".link").textContent = url;
         if (debugging) 
             clone.querySelector(".text").textContent = text;
-        else
-        {
+        else {
             var dataText;
             try {        
                 dataText = await fetch(text).then(response => {
@@ -105,30 +124,43 @@ async function drawPage(title, text, url) {
             clone.querySelector(".text").textContent = dataText;
         }
 
-        if (url.startsWith("https://www.youtube.com/"))
-            url =  url.replace("watch?v=", "embed/");
-        clone.querySelector(".video").setAttribute("src", url);
+        if (url != "") {
+            clone.querySelector(".link").textContent = `(${url})`;
+            clone.querySelector(".link").setAttribute("href", url);
+
+            if (url.startsWith("https://www.youtube.com/"))
+                url =  url.replace("watch?v=", "embed/");
+            clone.querySelector(".video").setAttribute("src", url);
+        } else {
+            clone.querySelector(".link").style.display = "none";
+            clone.querySelector(".video").style.display = "none";
+        }
 
         var close = clone.querySelector(".close");
-        //Add event handler
         close.addEventListener ("click", function() {
             // Remove Detail Document
             erasePage()
             
             // Show Summary Grid
-            const grid = document.getElementById("grid");
-            grid.hidden = false;
+            // const grid = document.getElementById("grid");
+            // grid.style.display = "block";
         });
 
         const fragment = document.createDocumentFragment();
         fragment.appendChild(clone);
         const doc = document.getElementById("page");
         doc.appendChild(fragment);
+
+        doc.style.display = "block";
+        doc.focus();
     }
 }
 
 function erasePage() {
     // Remove Detail Document
     const doc = document.getElementById("page");
-    doc.childNodes.forEach(c => doc.removeChild(c));
+    while (doc.firstChild) {
+        doc.removeChild(doc.firstChild);
+    };
+    doc.style.display = "none";
 }

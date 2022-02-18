@@ -9,12 +9,15 @@
   </head>
   <body>
     <header>
-      <div class="header zone redSener">
+      <div class="header zone redSolidSener">
         <div class="header">
           <img class="cover" src="./img/logo_sener.png">
           <label class="cover">MBSE - IBM Rhapsody</label>
         </div>
-        <input class="cover" type="search" placeholder="Search..."/>
+        <input id="search" class="cover" type="search" placeholder="Search..." 
+               onfocusout="filterCards()"
+               onkeyup="filterCards()"
+               />
       </div>
     </header>
     
@@ -23,7 +26,7 @@
       </div>
       
       <template id="card">
-        <button class="box zone" href="#">
+        <button class="box zone boxColor" href="#">
           <img class="image" src="./img/files_2.png">
           <p class="title">Title</p>
           <p class="descr">Explanation</p>
@@ -31,22 +34,19 @@
       </template>
     </section>
     
-    <section id="detail">
+    <section id="detail"></section>
       <div id="page" class="doc zone blueSkySener">
       </div>
       
       <template id="document">
-        <div class="doc zone blueSkySener">
+        <div class="doc">
           <div class="header">
             <p class="title">Title</p>
-            <button class="close i-cross" type="button">&#10007;</button>
+            <p class="close i-cross">&#10007;</p>
           </div>
           <a class="link" href="#">(Link)</a>
           <p class="text">Text</p>
-          <ul class="bullets">
-            <!--<li></li>-->
-          </ul>
-          <hr>
+          <span class="line"></span>
           <iframe class="video"
             width="560" 
             height="315" 
@@ -56,6 +56,9 @@
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
             allowfullscreen>
           </iframe>
+          <!-- <ul class="bullets">
+            <li></li>
+          </ul> -->
         </div>
         </template>
     </section>

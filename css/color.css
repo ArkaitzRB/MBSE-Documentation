@@ -1,3 +1,9 @@
+.boxColor {
+    background-color: #444;
+    color: white;
+}
+
+
 /*https://paulund.co.uk/how-to-create-shiny-css-buttons*/
 /***********************************************************************
  *  Green Background
@@ -67,7 +73,12 @@
 /***********************************************************************
  *  Red Sener
  **********************************************************************/
+ .redSolidSener {
+    color: white;
+    background: rgba(181, 56, 79, 1); /* Old browsers */
+}
  .redSener {
+    color: white;
     background: rgba(181, 56, 79, 1); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(181, 56, 79, 1) 0%, rgba(181, 56, 79, 0.85) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(181, 56, 79, 1)), color-stop(100%,rgba(181, 56, 79, 0.85))); /* Chrome,Safari4+ */
@@ -81,6 +92,7 @@
  *  Green Sener
  **********************************************************************/
  .greenSener {
+    color: white;
     background: rgba(106, 127, 16, 1); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(106, 127, 16, 1) 0%, rgba(106, 127, 16, 0.85) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(106, 127, 16, 1)), color-stop(100%,rgba(106, 127, 16, 0.85))); /* Chrome,Safari4+ */
@@ -94,6 +106,7 @@
  *  Blue Sky Sener
  **********************************************************************/
  .blueSkySener {
+    color: white;
     background: rgba(137, 159, 151, 1); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(137, 159, 151, 1) 0%, rgba(137, 159, 151, 0.85) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(137, 159, 151, 1)), color-stop(100%,rgba(137, 159, 151, 0.85))); /* Chrome,Safari4+ */
@@ -107,6 +120,7 @@
  *  Blue Sea Sener
  **********************************************************************/
  .blueSeaSener {
+    color: white;
     background: rgba(92, 127, 146, 1); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(92, 127, 146, 1) 0%, rgba(92, 127, 146, 0.85) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(92, 127, 146, 1)), color-stop(100%,rgba(92, 127, 146, 0.85))); /* Chrome,Safari4+ */
@@ -120,6 +134,7 @@
  *  Grey Sener
  **********************************************************************/
  .greySener {
+    color: white;
     background: rgba(156, 151, 146, 1); /* Old browsers */
     background: -moz-linear-gradient(top, rgba(156, 151, 146, 1) 0%, rgba(156, 151, 146, 0.85) 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(156, 151, 146, 1)), color-stop(100%,rgba(156, 151, 146, 0.85))); /* Chrome,Safari4+ */
