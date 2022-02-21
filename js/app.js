@@ -1,4 +1,4 @@
-const debugging = true
+const debugging = false
 const jsonFileDefault = "./data/summary.json";
 
 document.addEventListener("DOMContentLoaded", async() => {
@@ -128,7 +128,7 @@ async function drawPage(title, text, url) {
 
         if (url != "" && url != "#") {
             if (url.endsWith(".pdf")){
-                clone.querySelector(".link").textContent = `Ver PDF: ${url}`;
+                clone.querySelector(".link").textContent = `Ver PDF: ${url.substr(url.lastIndexOf("/")+1)}`;
                 clone.querySelector(".link").setAttribute("href", url);
                 
                 clone.querySelector(".video").style.display = "none";

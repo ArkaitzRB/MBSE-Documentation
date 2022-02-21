@@ -89,7 +89,7 @@ label.cover {
 
 .box > .image {
     height: 50%;
-    width: 100%;
+    width: auto;
     border: 2px solid white;
     border-radius: 15%;
 }
