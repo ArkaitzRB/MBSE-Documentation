@@ -6,4 +6,71 @@ https://www.youtube.com/watch?v=TnJHu7IqKI4
 
 Activity Diagrams
 	> 0:53 Use Cases
-		- 
+		- Will be Detailed in Activity Sequence Diagrams
+		
+	> 1:33 Activity Diagrams
+		- Shows multiple paths VS Sequence Diagram shows unique path
+		- Like FlowCharts
+		- Shows ordered Flow (Control and Object/Data) of:
+		  (see 2:25 - Basic Blocks explanation)
+			* Control blocks - rombo
+				+ Decision Node (unique input, multiple output)
+				+ Merge Node (multiple input, unique output)
+			* Object blocks (Data flow) -pin
+			* Actions
+				- Common Action - square
+				- Time Action - sand clock
+			* Events
+				+ Accept Event Action (input Event)
+				+ Send Event Action (output Event)
+		- Show the Behavior of the System
+		- In some Tools are executables
+			* Ex: Rhapsody let Produce Sequence Diagrams from Activity Diagrams
+			
+	> 7:08 Tokens
+		- Tokens represents the input Control or Data to an Action
+		- NOTE: 
+			+ Actions begins when all Tokens are present/satisfied
+			+ When an Action is completed, it passes a Token
+			
+	> 8:13 Data on Activities
+		- Object/Data flows to Actions on Pins (Tokens)
+	
+	> 9:25 IMPORTANT
+		- If an Action have 2 Inputs, Action won't star until 2 Inputs' Token "arrives"
+		- If only one of the 2 Inputs are sufficient to start the Action, it must be used a Merge Node of the 2 Inputs, where we can detail this behavior. And then, link the Merge Node to the Action
+		
+	> 10:40 Swimlanes
+		- Represents the Boundaries of each Part of the System
+		  (Frames of the Parts)
+		- The Crosing of these boundaries represents Interfaces between Parts
+		
+	> 12:00 Sequence Diagrams
+		- Actors and Parts of the Sytem
+			* Represented by Vertical lines
+		- Time
+			* Flows up-down
+			* There is no rellation between Vertical lines
+		- Operation Calls
+			* Happen between Parts
+			* Represented by horizontal arrows
+			* Could be Function Calls, or Information Flow
+		- Messages
+			* Happen from and to the same Part
+			* Two types:
+				+ Event Messages
+					o Asynchronous (Do not continue until an Operation Call arrives)
+					o Messages are handled at the users/receivers' context
+					o Represented by open arrow head
+				+ Messages
+					o Synchronous
+					o Messages are handled in the callers' context
+					o Represented by close arrow head
+			
+	> 15:36 Sequence Diagrams for Design
+	
+	> 16:19 Sequence Diagrams for Validation
+		- Running a Scenario
+			* Allow to compare Call Sequence VS Expected
+			* Check States/Conditions
+			* Look missing/extrneous Messages

@@ -1,0 +1,8 @@
+
+TUTORIAL - 321Gang
+
+Modeling Behavior (Module 8) - Introduction to Rhapsody for Software & Systems Engineers
+https://www.youtube.com/watch?v=knYpFew9FKo
+
+Behavior 
+	> x:xx What is...

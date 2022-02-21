@@ -1,4 +1,4 @@
-const debugging = false
+const debugging = true
 const jsonFileDefault = "./data/summary.json";
 
 document.addEventListener("DOMContentLoaded", async() => {
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
 async function readData (jsonFile) {
     if (debugging) 
-        return JSON.parse('[{"title": "Rhapsody","descr": "Descripción de conceptos básicos en Rhapsody","url": "","image": "./img/rhapsody.png","text": "./data/Rhapsody.txt"},{"title": "Getting Started with Rhapsody","descr": "Rhapsody Solution: SysML project, Use Case, Requirements, ...","url": "https://www.youtube.com/watch?v=9gpbq0UooOM","image": "./img/sysML.png","text": "./data/Getting Started SysML Rhapsody.txt"},{"title": "","descr": "","url": "https://www.google.es","image": "","text": "./data/.txt"}]')
+        return JSON.parse('[{ "title": "Apuntes", "descr": "Conceptos generales", "url": "./data/Videos y Documentación (ejemplos prácticos con múltiples Softwares).pdf", "image": "./img/sysML.png","text": "./data/Apuntes.txt" },{ "title": "Coursera", "descr": "Curso Introductorio a la Metodología de Modelos", "url": "#", "image": "./img/coursera.png","text": "","html": "./data/coursera-course.html" }, { "title": "Rhapsody", "descr": "Descripción de conceptos básicos en Rhapsody", "url": "#", "image": "./img/rhapsody.png","text": "./data/Rhapsody.txt" }, { "title": "Introduction to Rhapsody (1)", "descr": "Why Model", "url": "https://www.youtube.com/watch?v=9gpbq0UooOM", "image": "./img/321gang.png","text": "./data/Introduction to Rhapsody (1) Why Model.txt" }, { "title": "Introduction to Rhapsody (3)", "descr": "SysML Diagrams Overview", "url": "https://www.youtube.com/watch?v=3z71Dpkl7MQ", "image": "./img/321gang.png","text": "./data/Introduction to Rhapsody (3) SysML Diagram Overview.txt" }, { "title": "Introduction to Rhapsody (4)", "descr": "Modeling Requirements", "url": "https://www.youtube.com/watch?v=JUB18itNMG0", "image": "./img/321gang.png","text": "./data/Introduction to Rhapsody (4) Modeling Requirements.txt" }, { "title": "Introduction to Rhapsody (5)", "descr": "Modeling Use Cases", "url": "https://www.youtube.com/watch?v=vQjFJ6Gmgb4", "image": "./img/321gang.png","text": "./data/Introduction to Rhapsody (5) Modeling Use Cases.txt" }, { "title": "Introduction to Rhapsody (6)", "descr": "Refining Use Cases with Activity Diagrams", "url": "https://www.youtube.com/watch?v=TnJHu7IqKI4", "image": "./img/321gang.png","text": "./data/Introduction to Rhapsody (6) Refining Use Cases with Activity Diagrams.txt" }, { "title": "Introduction to Rhapsody (7)", "descr": "Modeling Structure", "url": "https://www.youtube.com/watch?v=SkepGfBJbiM", "image": "./img/321gang.png","text": "./data/Introduction to Rhapsody (7) Modeling Structure.txt" }, { "title": "Introduction to Rhapsody (8)", "descr": "Modeling Behavior", "url": "https://www.youtube.com/watch?v=knYpFew9FKo", "image": "./img/321gang.png","text": "./data/Introduction to Rhapsody (8) Modeling Behavior.txt" }, { "title": "Example: Thesis", "descr": "Modelling Hybrid Solar wind", "url": "(Tesis) MBSE aplicado a planta hibrida solar eolica2.pdf", "image": "./img/pdf.png","text": "./data/(Tesis) MBSE aplicado a planta hibrida solar eolica2.txt" }, { "title": "Introduction to SE Harmony Toolkit", "descr": "Rhapsody Solution: SE Harmony Toolkit presentation", "url": "https://www.youtube.com/watch?v=axX6wwY3puQ", "image": "./img/rhapsody.png","text": "./data/Introduction to SE Harmony Toolkit.txt" }, { "title": "Getting Started SysML Rhapsody", "descr": "Rhapsody Solution: SysML project flow, Use Case, Requirements, Validation (functional Analysis) - Activities, ...", "url": "https://www.youtube.com/watch?v=j2pglKC5f7U", "image": "./img/rhapsody.png","text": "./data/Getting Started SysML Rhapsody.txt" }, { "title": "To Explore...", "descr": "Following steps (Rhapsody, SysML, ...", "url": "#", "image": "./img/undraw.png","text": "./data/To Explore.txt" }, { "title": "", "descr": "", "url": "#", "image": "./img/.png","text": "./data/.txt","html": "./data/coursera-course.html" }]')
     
     var dataJson;
     try {        
@@ -73,20 +73,22 @@ function drawCard(element) {
         clone.querySelector(".descr").textContent = element.descr;
 
         var button = clone.querySelector("button");
-        button.addEventListener ("click", function() {
-            // Open an URL in a New Tab
-            //window.open(element.url, "_newtab" );
-            //window.open (element.url, "_blank" );
-            
+        button.addEventListener ("click", function() {            
             // Remove previous Detail Documents (if exist)
             erasePage()
-            
-            // Add Detail Document
-            drawPage(element.title, element.text, element.url)
-            
-            // Hide Summary Grid
-            // const grid = document.getElementById("grid");
-            // grid.style.display = "none";
+
+            // Open an URL in a New Tab
+            if (element.hasOwnProperty('html')) {
+                window.open(element.html, "_newtab" );
+                //window.open (element.url, "_blank" );
+            } else {
+                // Add Detail Document
+                drawPage(element.title, element.text, element.url)
+                
+                // Hide Summary Grid
+                // const grid = document.getElementById("grid");
+                // grid.style.display = "none";
+            }
         });
     
         const fragment = document.createDocumentFragment();
@@ -124,13 +126,20 @@ async function drawPage(title, text, url) {
             clone.querySelector(".text").textContent = dataText;
         }
 
-        if (url != "") {
-            clone.querySelector(".link").textContent = `(${url})`;
-            clone.querySelector(".link").setAttribute("href", url);
-
-            if (url.startsWith("https://www.youtube.com/"))
-                url =  url.replace("watch?v=", "embed/");
-            clone.querySelector(".video").setAttribute("src", url);
+        if (url != "" && url != "#") {
+            if (url.endsWith(".pdf")){
+                clone.querySelector(".link").textContent = `Ver PDF: ${url}`;
+                clone.querySelector(".link").setAttribute("href", url);
+                
+                clone.querySelector(".video").style.display = "none";
+            } else {
+                clone.querySelector(".link").textContent = `(${url})`;
+                clone.querySelector(".link").setAttribute("href", url);
+    
+                if (url.startsWith("https://www.youtube.com/"))
+                    url =  url.replace("watch?v=", "embed/");
+                clone.querySelector(".video").setAttribute("src", url);
+            }
         } else {
             clone.querySelector(".link").style.display = "none";
             clone.querySelector(".video").style.display = "none";

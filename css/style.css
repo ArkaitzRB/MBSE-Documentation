@@ -1,12 +1,12 @@
 header {
-    height: 12vh;
+    height: 6vh;
     width: 100%;
     position: fixed;
     top: 0;
 }
 
 body {
-    padding-top: 12vh;
+    padding-top: 8vh;
     margin: 0 auto;
     font-family: Arial;
 }
@@ -42,7 +42,7 @@ body {
 }
 
 img.cover {
-    height: 10vh;
+    height: 6vh;
 }
 
 label.cover {
@@ -89,6 +89,7 @@ label.cover {
 
 .box > .image {
     height: 50%;
+    width: 100%;
     border: 2px solid white;
     border-radius: 15%;
 }
@@ -105,7 +106,7 @@ label.cover {
     align-self: flex-start;
     font-size: 0.8rem;
     margin-top: 0;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
     overflow-wrap: break-word;
 }
 
@@ -129,6 +130,20 @@ label.cover {
 .doc > .header > .title {
     align-self: flex-end;
     font-size: 2.4rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.15rem solid white;
+}
+
+.doc > .title {
+    align-self: flex-start;
+    font-size: 2.4rem;
+    padding-bottom: 0.2rem;
+    border-bottom: 0.15rem solid white;
+}
+
+.doc > .subtitle {
+    align-self: flex-start;
+    font-size: 1.8rem;
 }
 
 .doc > .link {
@@ -139,8 +154,13 @@ label.cover {
     font-size: 1.2rem;
 }
 
-.doc > .video {
+.video {
     align-self: center;
+    padding-bottom: 0.5rem;
+    /* height: 50vh;
+    width: calc((560/315)*50vh); */
+    height: 315px;
+    width: 560px;
 }
 
 .doc > .bullets {
@@ -149,7 +169,7 @@ label.cover {
 
 .line {
     align-self: stretch;
-    margin-block: 10px;
+    margin-block: 1rem;
     border-block: 1px solid white;
 }
 
@@ -157,6 +177,10 @@ label.cover {
     align-self: flex-start; 
     font-size: 1.8rem;
     margin: 0;
+}
+
+.close:hover {
+    color: red;
 }
 
 /***********************************************************************

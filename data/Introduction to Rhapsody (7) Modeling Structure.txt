@@ -1,0 +1,8 @@
+
+TUTORIAL - 321Gang
+
+Modeling Structure (Module 7) - Introduction to Rhapsody for Software & Systems Engineers
+https://www.youtube.com/watch?v=SkepGfBJbiM
+
+Structure
+	> x:xx What is...

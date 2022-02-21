@@ -1,0 +1,26 @@
+
+1.2	References
+	• The International Council on Systems Engineering (INCOSE) Systems Engineering Handbook
+
+	• The Systems Engineering Body of Knowledge (SEBoK)
+		o SEBoKwiki.org
+		o Excellent reference site developed by INCOSE to broadly share systems engineering knowledge in a domain or problem independent way
+		
+	• ISO/IEC/IEEE 15288: 2015 - Systems and software engineering — System life cycle processes
+		o Standard systems and software engineering, system life cycle processes
+		
+	• The NASA Systems Engineering Handbook
+		o Provides an excellent view into how systems engineering principles are put into practice by an organization focused on designing and building highly complex systems.
+
+
+	• MBSE Wiki
+		o https://www.omgwiki.org/MBSE/doku.php
+		
+	• OMG (Object Management Group)
+		o https://www.omg.org/syseng/
+		
+	• OMG System Modelling Language
+		o https://www.omgsysml.org/
+		
+	• SysML Open Source Project
+		o https://sysml.org/

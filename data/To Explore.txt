@@ -1,15 +1,13 @@
 
 TO EXPLORE...
 
-YOUTUBE
-	> Traceability in Model Based Systems Engineering (1 of 3 - Getting Started SysML Rhapsody) 
-		- https://www.youtube.com/watch?v=5xX5q4hOEDs
-	> Rhapsody for Systems Engineering Functional Analysis - Pt 1 Activities (3 of 3 - Getting Started SysML Rhapsody) 
-		- https://www.youtube.com/watch?v=BawGtNP5Wus
-	> Rhapsody Enlightenment: The Systems Modeling Language SysML - Basic Structural modeling
-		- https://www.youtube.com/watch?v=S90h1Y5Pkp4
-	> Rhapsody Enlightenment: SysML State Modeling with Rhapsody for Model Driven Development
-		- https://www.youtube.com/watch?v=azcDvEpevBE
+YOUTUBE - ver...
+	> Ver 2 videos UNION Rhapsody-Simulink
+	> Terminar serie "Getting Started SysML Rhapsody" (vista Parte 2)
+		- Traceability in Model Based Systems Engineering (1 of 3 - Getting Started SysML Rhapsody) 
+			* https://www.youtube.com/watch?v=5xX5q4hOEDs
+		- Rhapsody for Systems Engineering Functional Analysis - Pt 1 Activities (3 of 3 Getting Started SysML Rhapsody) 
+			* https://www.youtube.com/watch?v=BawGtNP5Wus
 	
 DOCUMENTATION
 	> Creating customized profiles
@@ -18,4 +16,3 @@ DOCUMENTATION
 Search in SOLUTIONS (found in Help/Guide me...):
 	> Systems Engineering - System Design and Specification
 	> Control systems design with Rhapsody and Simulink
-
