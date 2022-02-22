@@ -1,6 +1,10 @@
 
 TO EXPLORE...
 
+Web
+	> Posicionarme en la Sección DOC, al pulsar sobre una TARJETA
+		- Pq se desconfigura el Grid al esconderlo ¿?¿?¿?
+
 YOUTUBE - ver...
 	> Ver 2 videos UNION Rhapsody-Simulink
 	> Terminar serie "Getting Started SysML Rhapsody" (vista Parte 2)

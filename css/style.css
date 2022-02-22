@@ -183,7 +183,7 @@ pre.text {
 .line {
     align-self: stretch;
     margin-block: 1rem;
-    border-block: 1px solid white;
+    border-block: 1px solid black; /* white;*/
 }
 
 .close{
