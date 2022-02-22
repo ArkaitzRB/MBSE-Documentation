@@ -12,7 +12,15 @@
         "url": "#",
         "image": "./img/coursera.png",
 		"text": "",
-		"html": "./data/Curso MBSE (Coursera)/coursera-course.html"
+		"html": "./data/coursera-course.html"
+    },
+	{
+        "title": "Webinar SENER Aeroespacial",
+        "descr": "Conceptos básicos introductorios a MBSE y SysML",
+        "url": "#",
+        "image": "./img/sener.png",
+		"text": "",
+		"html": "./data/webinar-sener.html"
     },
     {
         "title": "Rhapsody",
@@ -57,20 +65,6 @@
 		"text": "./data/Introduction to Rhapsody (6) Refining Use Cases with Activity Diagrams.txt"
     },
     {
-        "title": "Introduction to Rhapsody (7)",
-        "descr": "Modeling Structure",
-        "url": "https://www.youtube.com/watch?v=SkepGfBJbiM",
-        "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (7) Modeling Structure.txt"
-    },
-    {
-        "title": "Introduction to Rhapsody (8)",
-        "descr": "Modeling Behavior",
-        "url": "https://www.youtube.com/watch?v=knYpFew9FKo",
-        "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (8) Modeling Behavior.txt"
-    },
-    {
         "title": "Example: Thesis",
         "descr": "Modelling Hybrid Solar wind",
         "url": "(Tesis) MBSE aplicado a planta hibrida solar eolica2.pdf",
@@ -90,13 +84,6 @@
         "url": "https://www.youtube.com/watch?v=j2pglKC5f7U",
         "image": "./img/rhapsody.png",
 		"text": "./data/Getting Started SysML Rhapsody.txt"
-    },
-    {
-        "title": "To Explore...",
-        "descr": "Following steps (Rhapsody, SysML, ...",
-        "url": "#",
-        "image": "./img/undraw.png",
-		"text": "./data/To Explore.txt"
     },
     {
         "title": "",

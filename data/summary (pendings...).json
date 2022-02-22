@@ -1,0 +1,22 @@
+
+    {
+        "title": "Introduction to Rhapsody (7)",
+        "descr": "Modeling Structure",
+        "url": "https://www.youtube.com/watch?v=SkepGfBJbiM",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (7) Modeling Structure.txt"
+    },
+    {
+        "title": "Introduction to Rhapsody (8)",
+        "descr": "Modeling Behavior",
+        "url": "https://www.youtube.com/watch?v=knYpFew9FKo",
+        "image": "./img/321gang.png",
+		"text": "./data/Introduction to Rhapsody (8) Modeling Behavior.txt"
+    },
+    {
+        "title": "To Explore...",
+        "descr": "Following steps (Rhapsody, SysML, ...",
+        "url": "#",
+        "image": "./img/undraw.png",
+		"text": "./data/To Explore.txt"
+    },
