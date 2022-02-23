@@ -63,38 +63,48 @@ function filterCards() {
 }
 
 function drawCard(element) {
-    if (element !== undefined && element.title !== ""){
-        console.log('Card control ' + element.title, element)
-        const template = document.getElementById("card").content;
-        const clone = template.cloneNode(true);
-    
-        clone.querySelector(".image").setAttribute("src", element.image);
-        clone.querySelector(".title").textContent = element.title;
-        clone.querySelector(".descr").textContent = element.descr;
 
-        var button = clone.querySelector("button");
-        button.addEventListener ("click", function() {            
-            // Remove previous Detail Documents (if exist)
-            erasePage()
+    if (element !== undefined) {
+        const title = element.hasOwnProperty('title')? element.title: "";
+        const descr = element.hasOwnProperty('descr')? element.descr: "";
+        const image = element.hasOwnProperty('image')? element.image: "";
+        const url = element.hasOwnProperty('url')? element.url: "";
+        const text = element.hasOwnProperty('text')? element.text: "";
+        const html = element.hasOwnProperty('html')? element.html: "";
 
-            // Open an URL in a New Tab
-            if (element.hasOwnProperty('html')) {
-                window.open(element.html, "_newtab" );
-                //window.open (element.url, "_blank" );
-            } else {
-                // Add Detail Document
-                drawPage(element.title, element.text, element.url)
-                
-                // Hide Summary Grid
-                // const grid = document.getElementById("grid");
-                // grid.style.display = "none";
-            }
-        });
+        if (title !== ""){
+            console.log('Card control ' + title, element)
+            const template = document.getElementById("card").content;
+            const clone = template.cloneNode(true);
+        
+            clone.querySelector(".image").setAttribute("src", image);
+            clone.querySelector(".title").textContent = title;
+            clone.querySelector(".descr").textContent = descr;
     
-        const fragment = document.createDocumentFragment();
-        fragment.appendChild(clone);
-        const grid = document.getElementById("grid");
-        grid.appendChild(fragment);
+            var button = clone.querySelector("button");
+            button.addEventListener ("click", function() {            
+                // Remove previous Detail Documents (if exist)
+                erasePage()
+    
+                // Open an URL in a New Tab
+                if (html != "") {
+                    window.open(html, "_newtab" );
+                    //window.open (url, "_blank" );
+                } else {
+                    // Add Detail Document
+                    drawPage(title, text, url)
+                    
+                    // Hide Summary Grid
+                    // const grid = document.getElementById("grid");
+                    // grid.style.display = "none";
+                }
+            });
+        
+            const fragment = document.createDocumentFragment();
+            fragment.appendChild(clone);
+            const grid = document.getElementById("grid");
+            grid.appendChild(fragment);
+        }
     }
 }
 
