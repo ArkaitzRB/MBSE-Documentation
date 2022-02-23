@@ -1,5 +1,5 @@
 header {
-    height: 8.25vh;
+    height: 8vh;
     width: 99%;
     position: fixed;
     top: 0;
@@ -7,7 +7,7 @@ header {
 
 body {
     width: 99%;
-    padding-top: 8.25vh;
+    padding-top: 9vh;
     margin: 0;
     font-family: Arial;
 }
@@ -167,13 +167,21 @@ pre.text {
     word-wrap: break-word;
 }
 
-.video {
+.embed {
     align-self: center;
     padding-bottom: 0.5rem;
     /* height: 50vh;
     width: calc((560/315)*50vh); */
+}
+.video {
     height: 315px;
     width: 560px;
+}
+.html {
+    align-self: center;
+    padding-bottom: 0.5rem;
+    height: 70vh;
+    width: 90vw;
 }
 
 .doc > .bullets {

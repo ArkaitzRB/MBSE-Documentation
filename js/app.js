@@ -99,7 +99,7 @@ function drawCard(element) {
 }
 
 async function drawPage(title, text, url) {
-    if (text !== undefined && text !== ""){
+    if ((text !== undefined && text !== "") || (url !== undefined && url !== "")) {
         console.log('Document control ' + title, text)
         const template = document.getElementById("document").content;
         const clone = template.cloneNode(true);
@@ -108,41 +108,53 @@ async function drawPage(title, text, url) {
         if (debugging) 
             clone.querySelector(".text").textContent = text;
         else {
-            var dataText;
-            try {        
-                dataText = await fetch(text).then(response => {
-                                        return response.text();
-                                    }).then(data => {
-                                        return data;
-                                    }).catch(error => {
-                                        console.error('Error:', error);
-                                        return "";
-                                    });
+            if (text != "" && text != "#") {
+                var dataText;
+                try {        
+                    dataText = await fetch(text).then(response => {
+                                            return response.text();
+                                        }).then(data => {
+                                            return data;
+                                        }).catch(error => {
+                                            console.error('Error:', error);
+                                            return "";
+                                        });
 
-            } catch (error) {
-                console.error('Error:', error)
-                dataText = "";
+                } catch (error) {
+                    console.error('Error:', error)
+                    dataText = "";
+                }
+                clone.querySelector(".text").textContent = dataText;
+            } else {
+                clone.querySelector(".text").style.display = "none";
+                clone.querySelector(".line").style.display = "none";
             }
-            clone.querySelector(".text").textContent = dataText;
         }
 
         if (url != "" && url != "#") {
-            if (url.endsWith(".pdf")){
+            if (url.endsWith(".pdf")) {
                 clone.querySelector(".link").textContent = `Ver PDF: ${url.substr(url.lastIndexOf("/")+1)}`;
                 clone.querySelector(".link").setAttribute("href", url);
                 
-                clone.querySelector(".video").style.display = "none";
+                clone.querySelector(".embed").style.display = "none";
+            } else if (url.endsWith(".html")) {    
+                clone.querySelector(".link").style.display = "none";
+    
+                clone.querySelector(".embed").setAttribute("src", url);
+                clone.querySelector(".embed").classList.add('html');
             } else {
                 clone.querySelector(".link").textContent = `(${url})`;
                 clone.querySelector(".link").setAttribute("href", url);
     
                 if (url.startsWith("https://www.youtube.com/"))
                     url =  url.replace("watch?v=", "embed/");
-                clone.querySelector(".video").setAttribute("src", url);
+                clone.querySelector(".embed").setAttribute("src", url);
+                clone.querySelector(".embed").classList.add('video');
             }
         } else {
             clone.querySelector(".link").style.display = "none";
-            clone.querySelector(".video").style.display = "none";
+
+            clone.querySelector(".embed").style.display = "none";
         }
 
         var close = clone.querySelector(".close");

@@ -1,96 +1,103 @@
 [
 	{
-        "title": "Apuntes",
-        "descr": "Conceptos generales",
-        "url": "./data/Videos y Documentación (ejemplos prácticos con múltiples Softwares).pdf",
-        "image": "./img/sysML.png",
-		"text": "./data/Apuntes.txt"
-    },
+    "title": "Apuntes",
+    "descr": "Conceptos generales",
+    "url": "./data/Videos y Documentación (ejemplos prácticos con múltiples Softwares).pdf",
+    "image": "./img/sysML.png",
+    "text": "./data/Apuntes.txt"
+  },
 	{
-        "title": "Coursera",
-        "descr": "Curso Introductorio a la Metodología de Modelos",
-        "url": "#",
-        "image": "./img/coursera.png",
-		"text": "",
-		"html": "./data/coursera-course.html"
-    },
+    "title": "Coursera",
+    "descr": "Curso Introductorio a la Metodología de Modelos",
+    "url": "#",
+    "image": "./img/coursera.png",
+    "text": "",
+    "html": "./data/coursera-course.html"
+  },
 	{
-        "title": "Webinar SENER Aeroespacial",
-        "descr": "Conceptos básicos introductorios a MBSE y SysML",
-        "url": "#",
-        "image": "./img/sener.png",
-		"text": "",
-		"html": "./data/webinar-sener.html"
-    },
-    {
-        "title": "Rhapsody",
-        "descr": "Descripción de conceptos básicos en Rhapsody",
-        "url": "#",
-        "image": "./img/rhapsody.png",
-		"text": "./data/Rhapsody.txt"
-    },
-    {
-        "title": "Introduction to Rhapsody (1)",
-        "descr": "Why Model",
-        "url": "https://www.youtube.com/watch?v=9gpbq0UooOM",
-        "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (1) Why Model.txt"
-    },
-    {
-        "title": "Introduction to Rhapsody (3)",
-        "descr": "SysML Diagrams Overview",
-        "url": "https://www.youtube.com/watch?v=3z71Dpkl7MQ",
-        "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (3) SysML Diagram Overview.txt"
-    },
-    {
-        "title": "Introduction to Rhapsody (4)",
-        "descr": "Modeling Requirements",
-        "url": "https://www.youtube.com/watch?v=JUB18itNMG0",
-        "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (4) Modeling Requirements.txt"
-    },
-    {
-        "title": "Introduction to Rhapsody (5)",
-        "descr": "Modeling Use Cases",
-        "url": "https://www.youtube.com/watch?v=vQjFJ6Gmgb4",
-        "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (5) Modeling Use Cases.txt"
-    },
-    {
-        "title": "Introduction to Rhapsody (6)",
-        "descr": "Refining Use Cases with Activity Diagrams",
-        "url": "https://www.youtube.com/watch?v=TnJHu7IqKI4",
-        "image": "./img/321gang.png",
-		"text": "./data/Introduction to Rhapsody (6) Refining Use Cases with Activity Diagrams.txt"
-    },
-    {
-        "title": "Example: Thesis",
-        "descr": "Modelling Hybrid Solar wind",
-        "url": "(Tesis) MBSE aplicado a planta hibrida solar eolica2.pdf",
-        "image": "./img/pdf.png",
-		"text": "./data/(Tesis) MBSE aplicado a planta hibrida solar eolica2.txt"
-    },
-    {
-        "title": "Introduction to SE Harmony Toolkit",
-        "descr": "Rhapsody Solution: SE Harmony Toolkit presentation",
-        "url": "https://www.youtube.com/watch?v=axX6wwY3puQ",
-        "image": "./img/rhapsody.png",
-		"text": "./data/Introduction to SE Harmony Toolkit.txt"
-    },
-    {
-        "title": "Getting Started SysML Rhapsody",
-        "descr": "Rhapsody Solution: SysML project flow, Use Case, Requirements, Validation (functional Analysis) - Activities, ...",
-        "url": "https://www.youtube.com/watch?v=j2pglKC5f7U",
-        "image": "./img/rhapsody.png",
-		"text": "./data/Getting Started SysML Rhapsody.txt"
-    },
-    {
-        "title": "",
-        "descr": "",
-        "url": "#",
-        "image": "./img/.png",
-		"text": "./data/.txt",
-		"html": "./data/coursera-course.html"
-    }
+    "title": "Webinar SENER Aeroespacial",
+    "descr": "Conceptos básicos introductorios a MBSE y SysML",
+    "url": "#",
+    "image": "./img/sener.png",
+    "text": "",
+    "html": "./data/webinar-sener.html"
+  },
+  {
+    "title": "IBM",
+    "descr": "Introducción a MBSE y Rhapsody",
+    "url": "./data/ibm.html",
+    "image": "./img/ibm.png",
+    "text": ""
+  },
+  {
+    "title": "Rhapsody",
+    "descr": "Descripción de conceptos básicos en Rhapsody",
+    "url": "#",
+    "image": "./img/rhapsody.png",
+    "text": "./data/Rhapsody.txt"
+  },
+  {
+    "title": "Introduction to Rhapsody (1)",
+    "descr": "Why Model",
+    "url": "https://www.youtube.com/watch?v=9gpbq0UooOM",
+    "image": "./img/321gang.png",
+    "text": "./data/Introduction to Rhapsody (1) Why Model.txt"
+  },
+  {
+    "title": "Introduction to Rhapsody (3)",
+    "descr": "SysML Diagrams Overview",
+    "url": "https://www.youtube.com/watch?v=3z71Dpkl7MQ",
+    "image": "./img/321gang.png",
+    "text": "./data/Introduction to Rhapsody (3) SysML Diagram Overview.txt"
+  },
+  {
+    "title": "Introduction to Rhapsody (4)",
+    "descr": "Modeling Requirements",
+    "url": "https://www.youtube.com/watch?v=JUB18itNMG0",
+    "image": "./img/321gang.png",
+    "text": "./data/Introduction to Rhapsody (4) Modeling Requirements.txt"
+  },
+  {
+    "title": "Introduction to Rhapsody (5)",
+    "descr": "Modeling Use Cases",
+    "url": "https://www.youtube.com/watch?v=vQjFJ6Gmgb4",
+    "image": "./img/321gang.png",
+    "text": "./data/Introduction to Rhapsody (5) Modeling Use Cases.txt"
+  },
+  {
+    "title": "Introduction to Rhapsody (6)",
+    "descr": "Refining Use Cases with Activity Diagrams",
+    "url": "https://www.youtube.com/watch?v=TnJHu7IqKI4",
+    "image": "./img/321gang.png",
+    "text": "./data/Introduction to Rhapsody (6) Refining Use Cases with Activity Diagrams.txt"
+  },
+  {
+    "title": "Example: Thesis",
+    "descr": "Modelling Hybrid Solar wind",
+    "url": "(Tesis) MBSE aplicado a planta hibrida solar eolica2.pdf",
+    "image": "./img/pdf.png",
+    "text": "./data/(Tesis) MBSE aplicado a planta hibrida solar eolica2.txt"
+  },
+  {
+    "title": "Introduction to SE Harmony Toolkit",
+    "descr": "Rhapsody Solution: SE Harmony Toolkit presentation",
+    "url": "https://www.youtube.com/watch?v=axX6wwY3puQ",
+    "image": "./img/rhapsody.png",
+    "text": "./data/Introduction to SE Harmony Toolkit.txt"
+  },
+  {
+    "title": "Getting Started SysML Rhapsody",
+    "descr": "Rhapsody Solution: SysML project flow, Use Case, Requirements, Validation (functional Analysis) - Activities, ...",
+    "url": "https://www.youtube.com/watch?v=j2pglKC5f7U",
+    "image": "./img/rhapsody.png",
+    "text": "./data/Getting Started SysML Rhapsody.txt"
+  },
+  {
+    "title": "",
+    "descr": "",
+    "url": "#",
+    "image": "./img/.png",
+    "text": "./data/.txt",
+    "html": "./data/coursera-course.html"
+  }
 ]
