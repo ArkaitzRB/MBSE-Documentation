@@ -182,6 +182,9 @@ async function drawPage(title, text, url) {
             // Show Summary Grid
             const grid = document.getElementById("grid");
             grid.style.display = dispGrid;
+
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
         });
 
         const fragment = document.createDocumentFragment();
@@ -190,7 +193,9 @@ async function drawPage(title, text, url) {
         doc.appendChild(fragment);
 
         doc.style.display = dispDoc;
-        doc.focus();
+
+        document.documentElement.scrollTop = 0;
+        document.body.scrollTop = 0;
     }
 }
 

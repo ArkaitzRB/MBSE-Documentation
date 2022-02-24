@@ -1,23 +1,30 @@
+:root {
+    /* Sizes */
+    --header-height: 10vh;
+    --header-padding: 1vh;
+}
+
 header {
-    height: 8vh;
-    /* height: var(--header-height); */
     width: 99%;
     position: fixed;
     top: 0;
+    /* padding: 0.2em; */
 }
 
 body {
     width: 99%;
-    padding-top: 9vh;
-    margin: 0;
+    margin: 0px;
+    /* padding: 0.2em; */
+    padding-top: calc(var(--header-height) + var(--header-padding) + (var(--header-padding) / 10));
     font-family: Arial;
 }
 
 .zone {
-    cursor:pointer;
-    font-size:2em;
-    border-radius:4px;
-    border:1px solid #bbb;
+    /* cursor: pointer; */
+    cursor: default;
+    font-size: 2em;
+    border-radius: 4px;
+    border: 1px solid #bbb;
     transition: all 0.3s linear;
 }
 
@@ -35,31 +42,37 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* min-height: var(--header-height);
+    max-height: var(--header-height); */
     width: auto;
 }
 
 .cover {
-    min-height: 6vh;
-    max-height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-height: calc(var(--header-height) - var(--header-padding));
     width: auto;
-    margin: 8px;
+    margin: calc(2 * var(--header-padding));
 }
 
-img.cover {
-    height: auto;
+.cover > img {
+    max-height: calc(var(--header-height) - 2 * var(--header-padding));
     max-width: 25vw;
 }
 
-label.cover {
+.cover > label {
+    max-height: calc(var(--header-height) - var(--header-padding));
     max-width: 50vw;
-    /* align-items: center; */
+    margin-left: calc(2 * var(--header-padding));
+    margin-right: calc(2 * var(--header-padding));
+    text-align: center;
     font-size: min(3vw, 5vh);
     font-weight: bold;
-    text-align: center;
-    line-height: 6vh;
+    /* line-height: 6vh; */
 }
 
-#search {
+#search.cover {
     max-width: 20vw;
 }
 
@@ -89,6 +102,7 @@ label.cover {
 }
 
 .box {
+    cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -141,7 +155,7 @@ label.cover {
 }
 
 .doc > .header > .title {
-    align-self: flex-end;
+    align-self: flex-start;
     font-size: 2.4rem;
     padding-bottom: 0.2rem;
     border-bottom: 0.15rem solid;
@@ -219,7 +233,6 @@ pre.text {
  *  Footer
  **********************************************************************/
 footer {
-    width: 99%;
-    padding: 0.2em;
+    width: 99.99%;
     text-align: center;
 }

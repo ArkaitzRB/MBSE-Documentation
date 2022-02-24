@@ -1,3 +1,17 @@
+:root {
+    /* Colors SenCloud*/
+    --main-menu-option-color: rgba(0, 59, 121, 0.56);
+    --main-menu-option-hover-color: white;
+    --main-menu-option-hover-background: rgba(0, 59, 121, 0.56);
+    --main-menu-option-active-color: white;
+    --main-menu-option-active-background: #003b79;
+    --extra-borders: rgba(0, 59, 121, 0.56);
+    --sener-blue: #003b79;
+    --sener-brown: #998d7e;
+    --sener-red: #db4437;
+    --sener-green: #01b55c;
+}
+
 .boxColor {
     background-color: #444;
     color: white;
