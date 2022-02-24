@@ -1,13 +1,20 @@
 const debugging = false
 const jsonFileDefault = "./data/summary.json";
 
+// Display formats
+const dispNone = "none"
+const dispGrid = "grid"
+const dispCard = "flex"
+const dispDoc = "flex"
+
+
 document.addEventListener("DOMContentLoaded", async() => {
     let dataJson = await readData(jsonFileDefault);
     drawCards(dataJson);
 
     //Hide Detail Document
     const doc = document.getElementById("page");
-    doc.style.display = "none";
+    doc.style.display = dispNone;
 })
 
 async function readData (jsonFile) {
@@ -55,9 +62,9 @@ function filterCards() {
     for (let i = 0; i < grid.children.length; i++) {
         const child = grid.children[i];
         if (child.querySelector(".title").textContent.includes(filterText) || child.querySelector(".descr").textContent.includes(filterText)){
-            child.style.display = "block";
+            child.style.display = dispCard;
         } else {
-            child.style.display = "none";
+            child.style.display = dispNone;
         }
       }
 }
@@ -95,8 +102,8 @@ function drawCard(element) {
                     drawPage(title, text, url)
                     
                     // Hide Summary Grid
-                    // const grid = document.getElementById("grid");
-                    // grid.style.display = "none";
+                    const grid = document.getElementById("grid");
+                    grid.style.display = dispNone;
                 }
             });
         
@@ -136,8 +143,8 @@ async function drawPage(title, text, url) {
                 }
                 clone.querySelector(".text").textContent = dataText;
             } else {
-                clone.querySelector(".text").style.display = "none";
-                clone.querySelector(".line").style.display = "none";
+                clone.querySelector(".text").style.display = dispNone;
+                clone.querySelector(".line").style.display = dispNone;
             }
         }
 
@@ -146,9 +153,9 @@ async function drawPage(title, text, url) {
                 clone.querySelector(".link").textContent = `Ver PDF: ${url.substr(url.lastIndexOf("/")+1)}`;
                 clone.querySelector(".link").setAttribute("href", url);
                 
-                clone.querySelector(".embed").style.display = "none";
+                clone.querySelector(".embed").style.display = dispNone;
             } else if (url.endsWith(".html")) {    
-                clone.querySelector(".link").style.display = "none";
+                clone.querySelector(".link").style.display = dispNone;
     
                 clone.querySelector(".embed").setAttribute("src", url);
                 clone.querySelector(".embed").classList.add('html');
@@ -162,9 +169,9 @@ async function drawPage(title, text, url) {
                 clone.querySelector(".embed").classList.add('video');
             }
         } else {
-            clone.querySelector(".link").style.display = "none";
+            clone.querySelector(".link").style.display = dispNone;
 
-            clone.querySelector(".embed").style.display = "none";
+            clone.querySelector(".embed").style.display = dispNone;
         }
 
         var close = clone.querySelector(".close");
@@ -173,8 +180,8 @@ async function drawPage(title, text, url) {
             erasePage()
             
             // Show Summary Grid
-            // const grid = document.getElementById("grid");
-            // grid.style.display = "block";
+            const grid = document.getElementById("grid");
+            grid.style.display = dispGrid;
         });
 
         const fragment = document.createDocumentFragment();
@@ -182,7 +189,7 @@ async function drawPage(title, text, url) {
         const doc = document.getElementById("page");
         doc.appendChild(fragment);
 
-        doc.style.display = "block";
+        doc.style.display = dispDoc;
         doc.focus();
     }
 }
@@ -193,5 +200,5 @@ function erasePage() {
     while (doc.firstChild) {
         doc.removeChild(doc.firstChild);
     };
-    doc.style.display = "none";
+    doc.style.display = dispNone;
 }

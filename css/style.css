@@ -1,5 +1,6 @@
 header {
     height: 8vh;
+    /* height: var(--header-height); */
     width: 99%;
     position: fixed;
     top: 0;
@@ -38,18 +39,28 @@ body {
 }
 
 .cover {
+    min-height: 6vh;
+    max-height: 6vh;
     width: auto;
     margin: 8px;
 }
 
 img.cover {
-    height: 6vh;
+    height: auto;
+    max-width: 25vw;
 }
 
 label.cover {
-    align-items: center;
-    font-size: 3vw;
+    max-width: 50vw;
+    /* align-items: center; */
+    font-size: min(3vw, 5vh);
     font-weight: bold;
+    text-align: center;
+    line-height: 6vh;
+}
+
+#search {
+    max-width: 20vw;
 }
 
 .center {
