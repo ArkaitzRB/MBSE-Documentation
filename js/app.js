@@ -151,6 +151,17 @@ async function drawPage(title, text, url) {
                     console.error('Error:', error)
                     dataText = "";
                 }
+
+                // Replace "url" texts, for an <a> tag to the "url"
+                let urlLink = "";
+                let start = 0;
+                let end = 0;
+                do {
+                    start = dataText.indexOf("http", start);
+                    end = Math.min(a.indexOf(" ",start), a.indexOf("\n",start), a.indexOf("\t",start))
+                    dataText = dataText.replace(dataText.substring(start,end), '<a class="link" href="#">(Link)</a>')
+                } while (start != -1);
+
                 clone.querySelector(".text").textContent = dataText;
             } else {
                 clone.querySelector(".text").style.display = dispNone;

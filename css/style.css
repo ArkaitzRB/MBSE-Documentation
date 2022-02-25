@@ -2,29 +2,41 @@
 
 :root {
     /* Sizes */
-    --header-height: 10vh;
+    --header-height: min(10vh,10vw);
     --header-padding: 1vh;
+
+    /* Font type */
+    --doc-font-type: "Comic Sans MS", "Comic Sans", cursive;
+    --font-type: Garamond, Georgia, "Times New Roman", Times, serif;
+
+    /* Font size */
+    --body-font-size: min(3rem, 5.5vh);
+
+    --title-font-size: min(2.4rem, 5vh);
+    --subtitle-font-size: min(1.8rem, 4.5vh);
+    --text-font-size: min(1.2rem, 4vh);
+
+    --big-font-size: min(3vw, 5vh);
+    --medium-font-size: min(1.6rem, 4.2vh);
+    --small-font-size: min(0.8rem, 3.8vh);
 }
 
 header {
     width: 99%;
     position: fixed;
     top: 0;
-    /* padding: 0.2em; */
 }
 
 body {
     width: 99%;
     margin: 0px;
-    /* padding: 0.2em; */
-    padding-top: calc(var(--header-height) + 2 * var(--header-padding));
+    padding-top: calc(var(--header-height) + 3 * var(--header-padding));
     font-family: Arial;
 }
 
 .zone {
-    /* cursor: pointer; */
     cursor: default;
-    font-size: 2em;
+    font-size: var(body-font-size);
     border-radius: 4px;
     border: 1px solid #bbb;
     transition: all 0.3s linear;
@@ -44,8 +56,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* min-height: var(--header-height);
-    max-height: var(--header-height); */
     width: auto;
 }
 
@@ -53,12 +63,14 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: calc(var(--header-height) - var(--header-padding));
     max-height: calc(var(--header-height) - var(--header-padding));
     width: auto;
     margin: calc(2 * var(--header-padding));
 }
 
 .cover > a, .cover > a > img {
+    display: block;
     max-height: calc(var(--header-height) - 2 * var(--header-padding));
     max-width: 25vw;
 }
@@ -69,13 +81,15 @@ body {
     margin-left: calc(2 * var(--header-padding));
     margin-right: calc(2 * var(--header-padding));
     text-align: center;
-    font-size: min(3vw, 5vh);
+    font-size: var(--big-font-size);
     font-weight: bold;
-    /* line-height: 6vh; */
 }
 
 #search.cover {
+    min-height: calc(min(var(--text-font-size),max(var(--small-font-size), calc(var(--header-height) - 4 * var(--header-padding)))) + var(--header-padding));
+    max-height: calc(min(var(--text-font-size),max(var(--small-font-size), calc(var(--header-height) - 4 * var(--header-padding)))) + 2 * var(--header-padding));
     max-width: 20vw;
+    font-size: min(var(--text-font-size),max(var(--small-font-size), calc(var(--header-height) - 4 * var(--header-padding))));
 }
 
 .center {
@@ -125,7 +139,7 @@ body {
 
 .box > .title {
     align-self: stretch;
-    font-size: 1.6rem;
+    font-size: var(--body-font-size);
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     border-bottom: 1px solid rgba(153, 153, 153, 0.383);
@@ -133,7 +147,7 @@ body {
 
 .box > .descr {
     align-self: flex-start;
-    font-size: 0.8rem;
+    font-size: var(--small-font-size);
     margin-top: 0;
     /* margin-bottom: 2rem; */
     overflow-wrap: break-word;
@@ -154,38 +168,39 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    font-family: var(--doc-font-type);
 }
 
 .doc > .header > .title {
     align-self: flex-start;
-    font-size: 2.4rem;
+    font-size: var(--title-font-size);
     padding-bottom: 0.2rem;
     border-bottom: 0.15rem solid;
 }
 
 .doc > .title {
     align-self: flex-start;
-    font-size: 2.4rem;
+    font-size: var(--title-font-size);
     padding-bottom: 0.2rem;
     border-bottom: 0.15rem solid;
 }
 
 .doc > .subtitle {
     align-self: flex-start;
-    font-size: 1.8rem;
+    font-size: var(--subtitle-font-size);
 }
 
 .doc > .link {
-    font-size: 0.8rem;
+    font-size: var(--small-font-size);
 }
 
 .doc > .text {
-    font-size: 1.2rem;
+    font-size: var(--text-font-size);
     line-height : 2rem;
 }
 
 pre.text {
-    font-family: Garamond, Georgia, "Times New Roman", Times, serif;
+    font-family: var(--doc-font-type);
     overflow-x: auto;
     white-space: pre-wrap;
     white-space: -moz-pre-wrap;
@@ -197,12 +212,12 @@ pre.text {
 .embed {
     align-self: center;
     padding-bottom: 0.5rem;
-    /* height: 50vh;
-    width: calc((560/315)*50vh); */
 }
 .video {
-    height: 315px;
-    width: 560px;
+    /* height: 315px; */
+    /* width: 560px; */
+    height: min(315px,90vw * 315px / 560px);
+    width: min(560px,90vw);
 }
 .html {
     align-self: center;
@@ -212,18 +227,18 @@ pre.text {
 }
 
 .doc > .bullets {
-    font-size: 1.2rem;
+    font-size: var(--text-font-size);
 }
 
 .line {
     align-self: stretch;
     margin-block: 1rem;
-    border-block: 1px solid black; /* white;*/
+    border-block: 1px solid black;
 }
 
 .close{
     align-self: flex-start; 
-    font-size: 1.8rem;
+    font-size: var(--medium-font-size);
     margin: 0;
 }
 

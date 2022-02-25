@@ -1,6 +1,13 @@
 
 IBM Rational Rhapsody
 
+	> System Requirements:
+		- https://www.ibm.com/support/pages/system-requirements-ibm-engineering-systems-design-rhapsody-product-family
+		- Summary: 
+			* Disk space: 1.6 GB
+			* Memory RAM: 8 GB (64 Bit)
+			* Processor: Pentium 4, 3.00 GHz
+
 	> Wellcome page: 
 		- DOCUMENTATION
 		- SOLUTIONS: Interesting examples with Video and Guide (list of Tasks)
