@@ -152,17 +152,24 @@ async function drawPage(title, text, url) {
                     dataText = "";
                 }
 
-                // Replace "url" texts, for an <a> tag to the "url"
+                // Replace "url" with an <a> tag refered to the "url" (embed link to the url)
                 let urlLink = "";
                 let start = 0;
                 let end = 0;
                 do {
                     start = dataText.indexOf("http", start);
-                    end = Math.min(a.indexOf(" ",start), a.indexOf("\n",start), a.indexOf("\t",start))
-                    dataText = dataText.replace(dataText.substring(start,end), '<a class="link" href="#">(Link)</a>')
+                    end = Math.min(dataText.indexOf(" ",start), dataText.indexOf("\n",start), dataText.indexOf("\t",start));
+                    if (start != -1) {
+                        if (end == -1) { end = dataText.length; }
+                        let urlOld = dataText.substring(start,end);
+                        let urlNew = `<a href="${urlOld}">${urlOld}</a>`;
+                        dataText = dataText.replace(urlOld, urlNew);
+
+                        start += urlNew.length - urlOld.length;
+                    }
                 } while (start != -1);
 
-                clone.querySelector(".text").textContent = dataText;
+                clone.querySelector(".text").innerHTML = dataText;
             } else {
                 clone.querySelector(".text").style.display = dispNone;
                 clone.querySelector(".line").style.display = dispNone;
