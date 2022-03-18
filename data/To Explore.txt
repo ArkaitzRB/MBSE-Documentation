@@ -1,9 +1,11 @@
 
 TO EXPLORE...
 
-Web
-	> Posicionarme en la Sección DOC, al pulsar sobre una TARJETA
-		- Pq se desconfigura el Grid al esconderlo ¿?¿?¿?
+SIMULINK
+	> Cómo insertar Requisitos ¿?
+		- Puede analizarse el valor de una Señal a lo largo de una Ejecución ¿?
+		- Meter Bloques >,<, ... ¿?
+		- Meter Bloques en Simulink que den un Flag, si alguna vez se cumple una condición ¿?
 
 YOUTUBE - ver...
 	> Ver 2 videos UNION Rhapsody-Simulink

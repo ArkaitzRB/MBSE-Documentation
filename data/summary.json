@@ -69,6 +69,27 @@
     "text": "./data/Introduction to Rhapsody (6) Refining Use Cases with Activity Diagrams.txt"
   },
   {
+    "title": "Introduction to Rhapsody (7)",
+    "descr": "Modeling Structure",
+    "image": "./img/321gang.png",
+    "url": "https://www.youtube.com/watch?v=SkepGfBJbiM",
+    "text": "./data/Introduction to Rhapsody (7) Modeling Structure.txt"
+  },
+  {
+    "title": "Introduction to Rhapsody (8)",
+    "descr": "Modeling Behavior",
+    "image": "./img/321gang.png",
+    "url": "https://www.youtube.com/watch?v=knYpFew9FKo",
+    "text": "./data/Introduction to Rhapsody (8) Modeling Behavior.txt"
+  },
+  {
+    "title": "Introduction to Rhapsody (9)",
+    "descr": "Modeling Best Practices",
+    "image": "./img/321gang.png",
+    "url": "https://www.youtube.com/watch?v=NKanllOX0UA",
+    "text": "./data/Introduction to Rhapsody (9) Modeling Best Practices.txt"
+  },
+  {
     "title": "Example: Thesis",
     "descr": "Modelling Hybrid Solar wind",
     "image": "./img/pdf.png",

@@ -1,0 +1,74 @@
+
+TUTORIAL - 321Gang
+
+Modeling Best Practices (Module 9) - Introduction to Rhapsody for Software & Systems Engineers
+https://www.youtube.com/watch?v=NKanllOX0UA
+
+Behavior 
+	> 01:00 Index
+		- Follow an Iterative Development Approach
+		- Communicate with Upstream and Downstream Players
+		- Organize your Work
+		- Test and Validate. Often!
+		- Use Interfaces
+		- Make the Model your Own
+	
+	> 01:45 Follow an Iterative Development Approach
+		- Develop Iteratively 
+			* Short Sprints (Recommendation: 2-4 weeks)
+			* Microcycle (Design / Build / Test)
+				+ MBSE: Design -> Structure -> Operations -> Behavior -> Unit Test -> Integrate
+				+ Allow to detect errors fastly (as Tests are usualy run)
+	
+	> 04:58 Communicate with Upstream and Downstream Players
+		- Focus on The Handoff:
+			* Understand What the System does
+				+ Requirements (including derived requirements)
+				+ Use Cases
+				+ Design Synthesis Blocks/Parts (including Behavior)
+				+ Ports/Interface Blocks
+			* Understand What the Parts are
+			* Understand What the Parts do
+			* Understand the Interfaces
+	
+	> 08:42 Organize your Work
+		- Use Packages and SubPackages
+		- NOTE: 
+			* Use 4 or less Package Level
+			* If needed more level, it could be included Packages by Ref
+				+ Reference Models
+				+ ReadOnly Model			
+	
+	> 16:00 Test and Validate. Often!
+		- The sooner a Task is Tested, sooner will be found errors (if exist)
+		- Intermediate Validation: WHAT WE BUILD IS WHAT IS INTENDED TO BE BUILT ???
+			* It is NOT a Test of Verification of the System
+			* It is a Verification about "did I build the right thing?"
+		- Execute Part of the Model, to Confirm:
+			* State Changes (in State Charts)
+			* Flow Steps of the System (in Activity Diagram)
+			* Constrains evaluation (in Parametric Diagrams)
+		- 17:28 EXAMPLE of Testing
+	
+	> 18:50 Use Interfaces
+		- Use ALWAYS when it is possible
+		- Isolate Blocks behavior: Abstract the Calls from the Implementation
+		- Simplify the Model and make it easier to understand		
+	
+	> 22:28 Make the Model your Own
+		- Profiles
+			* Generate personalized PROFILE
+				+ Profile os a collection of Types, Terms. Stereotypes, and Helpers to accomplish a Task
+			* Rhapsody includes some predefined Profiles
+		- Properties files
+			* Control most thing in Rhapsody:
+				+ Layout
+				+ Look and Feel
+				+ Behaviors
+				+ Code Generation
+			* But, NEVER touch any file includiing "FactoryXXX.prp" or "SiteXXX.prp" (are the Factory set...)
+		- Model Reuse:
+			* Include Models by Reference for Common Functions
+			* Common Patterns
+			* Special Types
+			* ...

@@ -5,4 +5,70 @@ Modeling Behavior (Module 8) - Introduction to Rhapsody for Software & Systems E
 https://www.youtube.com/watch?v=knYpFew9FKo
 
 Behavior 
-	> x:xx What is...
+	> 00:46 Behavior
+		- What does the "piece" do when it receives the Interaction message
+		- Implemented via:
+			* Operations
+			* Flow Charts
+			* Activities
+			* State Charts
+			
+	> 01:45 State Charts
+		- Very simple Behavior representation
+		- Represents State/Event driven Behavior
+			* State: period that wait something to happen (represented by squares)
+			* Event: transition from/to States (represented by arrows)
+		- Start at "Default Transition" (represented by a circle-point with an arrow)
+
+	> 03:49 States
+		- Known condition
+		- System is in the State until a defined transition happens
+		
+	> 04:36 Events/Transitions
+		- SysML defines 4 types:
+			* Timeout event
+				+ Time is reached Or an amount of time is elapsed
+			* Signal event
+				+ Asynchronous signal received
+				+ (in Rhapsody) an event
+			* Call event
+				+ Operation call received
+				+ (in Rhapsody) a triggered operation
+			* Change event
+				+ Change in Value ocurred
+				
+	> 08:01 Event Actions
+		- Actions are executed WHEN entering/leaving a State
+		- Actions are Run To COMPLETION behaviors
+		- Actions are performed:
+			* On Exit
+			* On Transition
+			* On Entry
+			* Internal Transition In State (in nested States)
+			* On Timeout
+		- Guard (Trigger):
+			* Boolean expression to determine if the transition occurs
+			* ALWAYS is checked (even if the transition does not occur)
+		NOTE: Order of Operations execution:
+			* Guard Condition
+			* Action on Exit
+			* Action on Transition
+			* Action on Entry
+			
+	> 10:08 Example 1: Two ways of representing Nested States
+	> 13:00 Example 2: Transitions with History on the Timeout
+	> 14:08 History Connectors
+		- Returns State Chart to the most recent active State
+		- 2 types:
+			* Deep History Connector:
+				+ Includes history of all sub States (States inside a State of the actual State Charts)
+				+ Represented by the circle filled in blue
+			* Shallow History Connector:
+				+ Includes only current State level (this State Chart level)
+				+ Represented by the circle filled in white
+		- Only 1 History connector per State
+		
+	15:10 Parallel Regions in State Charts
+		- Allow Multiple Substates within a State
+		- All Regions receive the Same Event "Simultaneously"
+		- Regions are aware of each other (can "Test" others "State")

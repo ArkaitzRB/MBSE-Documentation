@@ -5,4 +5,69 @@ Modeling Structure (Module 7) - Introduction to Rhapsody for Software & Systems 
 https://www.youtube.com/watch?v=SkepGfBJbiM
 
 Structure
-	> x:xx What is...
+	> 00:45 Introduction
+		- Activity Diagram is usually the starting point to set the functionality of each part of the System
+		
+	> 02:53 Structural elements in SysML
+		- 02:58 Block
+			* Fundamental SysML Element of Structure
+			* Represents:
+				+ Systems
+				+ Subsystems
+				+ Components
+				+ Hardware
+				+ Software
+				+ Abstract Items (Data, ...)
+				+ Real Items
+			* 04:20 Define by its features:
+				+ Structural
+					o Value Properties
+					o Part Properties
+					o Interfaces/Ports
+					o Constrain Properties
+					o Associations to other Blocks
+				+ Behavioral
+					o Operations
+					o Activities/Activity Diagrams
+					o State Charts
+			* 05:12 Generalization
+				+ Simplfies Block behavior
+				+ Group similar behaviors in a common Class
+				+ Generalizations "Classify"
+					o Inherit Values and Operations
+					o Extend or Specialize functionality
+			* 06:16 Associations
+				+ In order to communicate with other Blocks
+				+ Could be:
+					o Directed (One Way) - represented as an arrow
+					o Two Way - represented as a line
+				+ They take Name:
+					o Directed has a Name
+					o Two Way has 2 Names
+				+ 7:26 Types of Associations:
+					o Aggregation
+						# Directed or Bidirectional
+						# Represented by a Hollow Diamond (rombo vacío)
+					o Composition
+						# Represent a Part of the Model
+						# NOT shared with other Blocks
+						# Represented by a Solid Diamond
+		- 08:27 Part
+			* Block decomposition component. Blocks which construct Blocks
+			* It can be shown as:
+				+ Directed composition 
+					o Block constructed by Blocks
+				+ Parts Property
+					o List of Properties of the Block
+					o It is an overal View
+				+ Internal Block Diagram
+					o Show internal Parts and their relationships (with Interfaces)
+					
+		- 08:27 Internal Block Diagram (IBD)
+			* Shows Blocks' composition, associations, relations between their Parts and Internal Ports and Interfaces (to do that relations)
+			* RECOMENDATION: 7-10 Blocks or less in each IBD
+				+ Each Block could be composed by other Blocks (with its IBD)
+			* 12:26 Activity Diagrams contains essential information:  
+				+ Swimlanes represent Parts of the Block
+				+ Actions (squares) represent an Operation of the Block
+				+ Loopings and Time actions represent Behavior, which are better represented in a StateChart (next Module)
