@@ -153,22 +153,18 @@ async function drawPage(title, text, url) {
                 }
 
                 // Replace "url" with an <a> tag refered to the "url" (embed link to the url)
-                let urlLink = "";
-                let start = 0;
-                let end = 0;
-                do {
-                    start = dataText.indexOf("http", start);
-                    end = Math.min(dataText.indexOf(" ",start), dataText.indexOf("\n",start), dataText.indexOf("\t",start));
-                    if (start != -1) {
-                        if (end == -1) { end = dataText.length; }
-                        let urlOld = dataText.substring(start,end);
-                        let urlNew = `<a href="${urlOld}">${urlOld}</a>`;
-                        dataText = dataText.replace(urlOld, urlNew);
-
-                        start += urlNew.length - urlOld.length;
-                    }
-                } while (start != -1);
-
+                dataText = replaceMarkedStringByHtmlTag(dataText,'http',' ',['<a href=','>','</a>'])
+                
+                // Replace "image reference" with an <img> tag refered to the "image" (show stored image)
+                dataText = replaceMarkedStringByHtmlTag(dataText,'<<img:','>>',[`<img src="./data/${title}/`,'">'])
+                
+                // Replace "string" with a <p> tag (insert formatted text)
+                dataText = replaceStringByHtmlTag(dataText,'REQUIRED',['<span style="color: var(--sener-red); font-weight: bold;">','</span>'])
+                dataText = replaceStringByHtmlTag(dataText,'NOTE',['<span style="color: var(--sener-blue); font-weight: bold;">','</span>'])
+                dataText = replaceStringByHtmlTag(dataText,'RECOMENDATION',['<span style="color: var(--sener-green); font-weight: bold;">','</span>'])
+                dataText = replaceStringByHtmlTag(dataText,'INTERESTING',['<span style="color: var(--sener-green); font-weight: bold;">','</span>'])
+                dataText = replaceStringByHtmlTag(dataText,'EXAMPLE',['<span style="color: var(--sener-blue-sea); font-style: italic; font-weight: bold;">','</span>'])
+                
                 clone.querySelector(".text").innerHTML = dataText;
             } else {
                 clone.querySelector(".text").style.display = dispNone;
@@ -247,4 +243,47 @@ function erasePage() {
 
     // Hide Detail Document
     doc.style.display = dispNone;
+}
+
+// Manage string replacement with a html tag (for example, an url by an embebed reference)
+function replaceMarkedStringByHtmlTag(dataText, iniText, endText, replacementText, includeBoundaryText = false) {
+    // EXAMPLES:
+    //      - Replace "url" with an <a> tag refered to the "url" (embed link to the url)
+    //              dataText = replaceMarkedStringByHtmlTag(dataText,'http',' ',['<a href=','>','</a>'])
+    //
+    //      - Replace "image reference" with an <img> tag refered to the "image" (show stored image)
+    //              dataText = replaceMarkedStringByHtmlTag(dataText,'<<img:','>>',[`<img src="./data/${title}/`,'">'])
+
+    let start = 0;
+    let end = 0;
+    do {
+        start = dataText.indexOf(iniText, start);
+        end = Math.min(dataText.indexOf(endText,start), dataText.indexOf("\n",start), dataText.indexOf("\t",start));
+        if (start != -1) {
+            if (end == -1) { end = dataText.length; }
+            let txtOld = dataText.substring(start,end);
+            let txtNew = replacementText.join(includeBoundaryText?txtOld:txtOld.replace(iniText,''));
+            dataText = dataText.replace(txtOld + endText, txtNew);
+
+            start += txtNew.length - txtOld.length;
+        }
+    } while (start != -1);
+
+    return dataText
+}
+
+// Manage string replacement with a html tag (for example, an url by an embebed reference)
+function replaceStringByHtmlTag(dataText, txtOld, replacementText) {
+    // EXAMPLES:
+    //      - Replace "string" with a <p> tag (insert formatted text)
+    //              dataText = replaceStringByHtmlTag(dataText,'REQUIRED',['<p style="color: var(--sener-red); font-weight: bold;">','</p>'])
+    //              dataText = replaceStringByHtmlTag(dataText,'NOTE',['<p style="color: var(--sener-blue); font-weight: bold;">','</p>'])
+    //              dataText = replaceStringByHtmlTag(dataText,'RECOMENDATION',['<p style="color: var(--sener-green); font-weight: bold;">','</p>'])
+    //              dataText = replaceStringByHtmlTag(dataText,'INTERESTING',['<p style="color: var(--sener-green); font-weight: bold;">','</p>'])
+    //              dataText = replaceStringByHtmlTag(dataText,'EXAMPLE',['<p style="color: var(--sener-blue-sea); font-style: italic; font-weight: bold;">','</p>'])
+
+    let txtNew = replacementText.join(txtOld);
+    dataText = dataText.replace(txtOld, txtNew);
+
+    return dataText
 }

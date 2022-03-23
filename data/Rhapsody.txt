@@ -20,3 +20,11 @@ IBM Rational Rhapsody
 				+ ...
 					o ...
 
+
+
+
+- "REQUIRED" > RojoSener, Negrita
+- "NOTE" > AzulSener, Negrita
+- "RECOMENDATION" > VerdeSener, Negrita
+- "INTERESTING" > VerdeSener, Negrita
+- "EXAMPLE" > Cursiva, Negrita

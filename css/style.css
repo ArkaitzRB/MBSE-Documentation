@@ -139,7 +139,7 @@ body {
 
 .box > .title {
     align-self: stretch;
-    font-size: var(--body-font-size);
+    font-size: var(--medium-font-size);
     margin-top: 1rem;
     margin-bottom: 0.5rem;
     border-bottom: 1px solid rgba(153, 153, 153, 0.383);
@@ -240,6 +240,10 @@ pre.text {
     align-self: flex-start; 
     font-size: var(--medium-font-size);
     margin: 0;
+}
+
+.close:link {
+    text-decoration: none;
 }
 
 .close:hover {

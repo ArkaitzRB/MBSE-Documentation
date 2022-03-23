@@ -1,14 +1,30 @@
 
 TO EXPLORE...
 
+
+
+
+HACER RESUMEN y AÑADIR A DOCUMENTACIÓN
+	> Simulink Model in Rhapsody
+		- (VISTO) Rhapsody Mathworks Simulink integration
+			* Cómo se Importa Modelo Simulink en Rhapsody
+			* Cómo se Genera una simulación básica
+			* BUSCAR INFO acerca de EVOCEAN - Tienen más videos Interesantes de RHAPSODY???
+			* https://www.youtube.com/watch?v=Db3XWYKJSdo
+
+
+RHAPSODY
+	> QUÉ ES "Rhapsody Panel Diagram" ¿?¿?¿? - parece algo similar a un GUI de Matlab - Ahondar!!!!!!!!!!!
+		- Rhapsody And Simulink Integration (minuto 13:56)
+
 SIMULINK
+	> QUÉ ES "S-Functions" in Simulink ¿?¿?¿?
 	> Cómo insertar Requisitos ¿?
-		- Puede analizarse el valor de una Señal a lo largo de una Ejecución ¿?
+		- Puede analizarse el valor de una Señal a lo largo de una Ejecución ¿? --> SÍ, Y ESTÁ HECHO EL EJEMPLO DE UN FLAG QUE INDICA SI EN ALGÚN MOMENTO SE HA INCUMPLIDO EL REQUISITO
 		- Meter Bloques >,<, ... ¿?
 		- Meter Bloques en Simulink que den un Flag, si alguna vez se cumple una condición ¿?
 
 YOUTUBE - ver...
-	> Ver 2 videos UNION Rhapsody-Simulink
 	> Terminar serie "Getting Started SysML Rhapsody" (vista Parte 2)
 		- Traceability in Model Based Systems Engineering (1 of 3 - Getting Started SysML Rhapsody) 
 			* https://www.youtube.com/watch?v=5xX5q4hOEDs

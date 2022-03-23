@@ -33,7 +33,7 @@ https://www.youtube.com/watch?v=3z71Dpkl7MQ
 			* Arrows represent event emitted (out) and accepted (in)
 			* Square: Actions -> ideallt takes no time, and can´t be interrupted
 				(could be data, and events IN)
-			* "Rombos": Decision point
+			* Diamonds ("Rombos"): Decision point
 			*** Every Path represent a sequence
 			
 		- Sequence Diagram
