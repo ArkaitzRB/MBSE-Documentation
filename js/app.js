@@ -9,6 +9,7 @@ const dispNone = "none"
 const dispGrid = "grid"
 const dispCard = "flex"
 const dispDoc = "flex"
+const dispHeader = "flex"
 
 // Initial execution
 document.addEventListener("DOMContentLoaded", async() => {
@@ -109,6 +110,10 @@ function drawCard(element) {
                     // Hide Summary Grid
                     const grid = document.getElementById("grid");
                     grid.style.display = dispNone;
+
+                    // Hide Summary Search (InputBox)
+                    const search = document.getElementById("search");
+                    search.style.display = dispNone;
                 }
             });
         
@@ -153,17 +158,19 @@ async function drawPage(title, text, url) {
                 }
 
                 // Replace "url" with an <a> tag refered to the "url" (embed link to the url)
-                dataText = replaceMarkedStringByHtmlTag(dataText,'http',' ',['<a href=','>','</a>'])
+                dataText = replaceMarkedStringByHtmlTag(dataText,'http',' ',['<a href=','>','</a>'],includeBoundaryText = true);
+                dataText = replaceMarkedStringByHtmlTag(dataText,'http','\n',['<a href=','>','</a>'],includeBoundaryText = true);
                 
                 // Replace "image reference" with an <img> tag refered to the "image" (show stored image)
-                dataText = replaceMarkedStringByHtmlTag(dataText,'<<img:','>>',[`<img src="./data/${title}/`,'">'])
+                dataText = replaceMarkedStringByHtmlTag(dataText,'<<img:','>>',[`<img src="./data/${title}/`,'" alt="','">']);
                 
                 // Replace "string" with a <p> tag (insert formatted text)
-                dataText = replaceStringByHtmlTag(dataText,'REQUIRED',['<span style="color: var(--sener-red); font-weight: bold;">','</span>'])
-                dataText = replaceStringByHtmlTag(dataText,'NOTE',['<span style="color: var(--sener-blue); font-weight: bold;">','</span>'])
-                dataText = replaceStringByHtmlTag(dataText,'RECOMENDATION',['<span style="color: var(--sener-green); font-weight: bold;">','</span>'])
-                dataText = replaceStringByHtmlTag(dataText,'INTERESTING',['<span style="color: var(--sener-green); font-weight: bold;">','</span>'])
-                dataText = replaceStringByHtmlTag(dataText,'EXAMPLE',['<span style="color: var(--sener-blue-sea); font-style: italic; font-weight: bold;">','</span>'])
+                dataText = replaceStringByHtmlTag(dataText,'INTERESTING',['<span style="color: var(--sener-green); font-weight: bold;">','</span>']);
+                dataText = replaceStringByHtmlTag(dataText,'RECOMENDATION',['<span style="color: var(--sener-green); font-weight: bold;">','</span>']);
+                dataText = replaceStringByHtmlTag(dataText,'NOTE',['<span style="color: var(--sener-blue); font-weight: bold;">','</span>']);
+                dataText = replaceStringByHtmlTag(dataText,'EXAMPLE',['<span style="color: var(--sener-blue-sea); font-style: italic; font-weight: bold;">','</span>']);
+                dataText = replaceStringByHtmlTag(dataText,'REQUIRED',['<span style="color: var(--sener-red); font-weight: bold;">','</span>']);
+                dataText = replaceStringByHtmlTag(dataText,'WARNING',['<span style="color: var(--sener-red); font-weight: bold;">','</span>']);
                 
                 clone.querySelector(".text").innerHTML = dataText;
             } else {
@@ -212,6 +219,10 @@ async function drawPage(title, text, url) {
             // Show Summary Grid
             const grid = document.getElementById("grid");
             grid.style.display = dispGrid;
+
+            // Show Summary Search (InputBox)
+            const search = document.getElementById("search");
+            search.style.display = dispHeader;
 
             // Force navigation bar to the top of the Document
             document.documentElement.scrollTop = 0;
@@ -276,11 +287,12 @@ function replaceMarkedStringByHtmlTag(dataText, iniText, endText, replacementTex
 function replaceStringByHtmlTag(dataText, txtOld, replacementText) {
     // EXAMPLES:
     //      - Replace "string" with a <p> tag (insert formatted text)
-    //              dataText = replaceStringByHtmlTag(dataText,'REQUIRED',['<p style="color: var(--sener-red); font-weight: bold;">','</p>'])
-    //              dataText = replaceStringByHtmlTag(dataText,'NOTE',['<p style="color: var(--sener-blue); font-weight: bold;">','</p>'])
-    //              dataText = replaceStringByHtmlTag(dataText,'RECOMENDATION',['<p style="color: var(--sener-green); font-weight: bold;">','</p>'])
-    //              dataText = replaceStringByHtmlTag(dataText,'INTERESTING',['<p style="color: var(--sener-green); font-weight: bold;">','</p>'])
-    //              dataText = replaceStringByHtmlTag(dataText,'EXAMPLE',['<p style="color: var(--sener-blue-sea); font-style: italic; font-weight: bold;">','</p>'])
+    //              dataText = replaceStringByHtmlTag(dataText,'INTERESTING',['<span style="color: var(--sener-green); font-weight: bold;">','</span>']);
+    //              dataText = replaceStringByHtmlTag(dataText,'RECOMENDATION',['<span style="color: var(--sener-green); font-weight: bold;">','</span>']);
+    //              dataText = replaceStringByHtmlTag(dataText,'NOTE',['<span style="color: var(--sener-blue); font-weight: bold;">','</span>']);
+    //              dataText = replaceStringByHtmlTag(dataText,'EXAMPLE',['<span style="color: var(--sener-blue-sea); font-style: italic; font-weight: bold;">','</span>']);
+    //              dataText = replaceStringByHtmlTag(dataText,'REQUIRED',['<span style="color: var(--sener-red); font-weight: bold;">','</span>']);
+    //              dataText = replaceStringByHtmlTag(dataText,'WARNING',['<span style="color: var(--sener-red); font-weight: bold;">','</span>']);
 
     let txtNew = replacementText.join(txtOld);
     dataText = dataText.replace(txtOld, txtNew);

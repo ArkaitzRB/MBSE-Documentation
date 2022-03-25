@@ -90,6 +90,20 @@
     "text": "./data/Introduction to Rhapsody (9) Modeling Best Practices.txt"
   },
   {
+    "title": "Rhapsody and Simulink Integration",
+    "descr": "Rhapsody and Simulink integration possibilities",
+    "image": "./img/simulink.png",
+    "url": "https://www.youtube.com/watch?v=MtoCq2u2_Ec",
+    "text": "./data/Rhapsody and Simulink Integration.txt"
+  },
+  {
+    "title": "Rhapsody Mathworks Simulink integration",
+    "descr": "Importing Simulink model to Rhapsody, and testing it in Rhapsody",
+    "image": "./img/simulink.png",
+    "url": "https://www.youtube.com/watch?v=Db3XWYKJSdo",
+    "text": "./data/Rhapsody Mathworks Simulink integration.txt"
+  },
+  {
     "title": "Example: Thesis",
     "descr": "Modelling Hybrid Solar wind",
     "image": "./img/pdf.png",

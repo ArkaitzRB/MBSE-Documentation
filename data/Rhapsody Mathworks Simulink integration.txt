@@ -1,0 +1,44 @@
+
+Rhapsody Mathworks Simulink integration
+https://www.youtube.com/watch?v=Db3XWYKJSdo
+
+	> 00:14 There are 4 different options to integrate SIMULINK execution with Rhapsody modeling:
+		<<img:Rhapsody & Simulink integration options.png>>
+		
+		- In this video will be explained the 2nd one: "Generate executable code from a Rhapsody model with parts implemented in Simulink"
+	
+	> 00:39 Import Simulink Model
+		- They should be imported by a "SimulinkBlock" in Rhapsody
+		- Input/Output Ports of the Simulink Block are exposed as the rest of Rhapsody flowports
+		
+		- In order to import the model:
+			1) NOTE: Simulink Profile should be load previously
+			2) Insert a new Block, and select its Stereotype as "SimulinkBlock in Simulink" 
+			3) Select the Block, and with mouse's secondary button select "Import/Sync Simulink Model"
+				* Select MATLAB executable
+				* Select SIMULINK Model file
+				* Select SIMULINK Generated Source Code (NOT always... - WARNING: Research when it is necessary to add this file)
+					+ 02:40 NOTE: previously in SIMULINK, should get executable of the Model by "C/C++ Code / Code Generation Options"
+			
+	> 04:20 Create a Model from Rhapsody
+		- Create the Block in Rhapsody ("Class" object)
+		- Create its Ports
+		- Add its Attributes (corresponding to the Ports)
+		
+	> 05:57 Create Runtime Object
+		- Create the Block in Rhapsody ("Composite Class" object)
+			* For further information, see "Creating runtime objects and init relations"
+			  (https://www.youtube.com/watch?v=UkgLb_VS9fQ)
+		- Insert every previous Blocks into this component
+		- Link Blocks
+		
+	> 06:46 Configure Simulation on Rhapsody
+		- Set "Runtime Object" as initial Instance
+		- Choose Instrumentation Mode to "Animation"
+		
+	> 07:08 Add New Panel
+		- From SimulinkModel Tree, select "Add New / Diagrams / Panel Diagram"
+		- The Panel allow to watch ports' values during the Simulation on Rhapsody
+		
+	> 07:46 Run Simulation
+		- Select "Code / Generate/Meke/Run" to compile the Simulation

@@ -13,9 +13,15 @@ HACER RESUMEN y AÑADIR A DOCUMENTACIÓN
 			* https://www.youtube.com/watch?v=Db3XWYKJSdo
 
 
+
+
+
+
 RHAPSODY
 	> QUÉ ES "Rhapsody Panel Diagram" ¿?¿?¿? - parece algo similar a un GUI de Matlab - Ahondar!!!!!!!!!!!
 		- Rhapsody And Simulink Integration (minuto 13:56)
+
+
 
 SIMULINK
 	> QUÉ ES "S-Functions" in Simulink ¿?¿?¿?
@@ -24,13 +30,25 @@ SIMULINK
 		- Meter Bloques >,<, ... ¿?
 		- Meter Bloques en Simulink que den un Flag, si alguna vez se cumple una condición ¿?
 
+
+
+EVOCEAN
+	> Vistos:
+		- "Rhapsody Mathworks Simulink integration"
+	> Ver:
+		- "Creating runtime objects and init relations"
+			* https://www.youtube.com/watch?v=UkgLb_VS9fQ
+
+
 YOUTUBE - ver...
 	> Terminar serie "Getting Started SysML Rhapsody" (vista Parte 2)
 		- Traceability in Model Based Systems Engineering (1 of 3 - Getting Started SysML Rhapsody) 
 			* https://www.youtube.com/watch?v=5xX5q4hOEDs
 		- Rhapsody for Systems Engineering Functional Analysis - Pt 1 Activities (3 of 3 Getting Started SysML Rhapsody) 
 			* https://www.youtube.com/watch?v=BawGtNP5Wus
-	
+
+
+
 DOCUMENTATION
 	> Creating customized profiles
 		- https://www.ibm.com/docs/en/rhapsody/9.0.1?topic=profiles-creating-customized

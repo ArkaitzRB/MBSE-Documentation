@@ -1,0 +1,57 @@
+
+Rhapsody And Simulink Integration
+https://www.youtube.com/watch?v=MtoCq2u2_Ec
+
+	> 00:45 Model simulation:
+		- Some Parts better suiter to SIMULINK
+			* Continuous algorithms
+		- Some Parts better suiter to RHAPSODY
+			* Discrete algorithms
+			* Event driven systems
+			* Architecture
+			* Requirements linkage
+			* ...			
+	
+	> 01:10 RHAPSODY <-> SIMULINK Integration Points
+		<<img:Rhapsody & Simulink Integration Points.png>>
+		
+	> 01:56 Architectural and Behavioral Modeling & Simulation
+		- 3 Options:
+			* Import SIMULINK Models into RHAPSODY 
+				+ REQUIRED: SIMULINK "Real Time Workshop")
+			* Export Models to SIMULINK
+				+ SysML Block automatically converted into S-Functions in SIMULINK
+			* Full Plant Modeling (INTERESTING)
+				+ RHAPSODY may create entire SIMULINK Models from a combination of RHAPSODY Blocks, and SIMULINK Models
+				+ There is NO SIMULINK "Real Time Workshop" Requirement
+				+ SIMULINK performs the EXECUTION
+				+ RHAPSODY animation could be run at the same time -> Real Co-Simulation between RHAPSODY and SIMULINK
+	
+	> 03:51 Guide of "Full Plant Modeling"
+		- First: SIMULINK "Profile" should be added
+		- In order to create SIMULINK model, Blocks of type "Simulink Model" should be created
+			* SIMULINK model could be imported to them (*.mdl files)
+			* Imported model could be opened from RHAPSODY in SIMULINK
+		- 06:40 In order to export the "Full Plant Modeling":
+			* Create a new Internal Block Diagram
+			* Insert desired "Simulink Model"-s in the Diagram
+			* Insert desired Connections between Models
+			* Export Model: "context menu (secondary mouse button) / Simulink / Export"
+		- 07:53 Exported Model could be executed in SIMULINK
+			* From Rhapsody, editing "Simulink Model" blocks, SIMULINK execution settings could be changed
+				+ It will be updated in the following Exported Model to SIMULINK
+				
+	> 08:48 Mixing Rhapsody and Simulink Models
+		- Instead of importing all SIMULINK Models, it could be a mix of RHAPSODY and SIMULINK Models
+		- 09:12 Creation of a new Rhapsody Model Block (instead of "Simulink Model")
+		- 09:26 Adding Ports to the Rhapsody Model Block (and link it to an Attribute to propagate the value)
+		- 10:42 Add Behavior to the Rhapsody Model Block (for example, by a State Machine - StateChart Diagram)
+		- 11:45 In order to export the Entire Model (Mix Models of Rhapsody and Simulink):
+			* Export Model: "context menu (secondary mouse button) / Simulink / Export for Animation"
+				+ Export for Animation: Enables to show the simulation in SIMULINK and in RHAPSODY
+				+ To show StateChart animation (and Debugging), select "Tools / Animated StateChart"
+	
+	> 13:40 Example
+		- Complex example with multiple "Simulink Model" Blocks and Rhapsody Model Blocks
+		- 13:56 Rhapsody Panel Diagram is added to analyse the execution
+			* NOTE: Research if it is INTERESTING

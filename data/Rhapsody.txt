@@ -23,8 +23,9 @@ IBM Rational Rhapsody
 
 
 
-- "REQUIRED" > RojoSener, Negrita
-- "NOTE" > AzulSener, Negrita
-- "RECOMENDATION" > VerdeSener, Negrita
 - "INTERESTING" > VerdeSener, Negrita
+- "RECOMENDATION" > VerdeSener, Negrita
+- "NOTE" > AzulSener, Negrita
 - "EXAMPLE" > Cursiva, Negrita
+- "REQUIRED" > RojoSener, Negrita
+- "WARNING" > RojoSener, Negrita

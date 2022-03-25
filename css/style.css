@@ -214,10 +214,10 @@ pre.text {
     padding-bottom: 0.5rem;
 }
 .video {
-    /* height: 315px; */
-    /* width: 560px; */
-    height: min(315px,90vw * 315px / 560px);
-    width: min(560px,90vw);
+    /* height: 315px;
+    width: 560px; */
+    height: min(315px,(315 / 560) * 90vw);
+    width: min(560px,90vw); 
 }
 .html {
     align-self: center;
